@@ -1,0 +1,32 @@
+.config
+Рабочий стол
+Загрузки
+Шаблоны
+Общедоступные
+Документы
+Музыка
+Изображения
+Видео
+.local
+.cache
+.nv
+.mozilla
+.pki
+VirtualBox VMs
+.ssh
+.vscode
+.mono
+visual-studio-code-bin
+.yandex
+.dotnet
+.templateengine
+.nuget
+.designer
+.steam
+Games
+PortWINE
+.ServiceHub
+Library
+.aspnet
+.wine
+yay
