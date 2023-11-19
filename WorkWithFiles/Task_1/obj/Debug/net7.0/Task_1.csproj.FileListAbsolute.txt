@@ -1,0 +1,14 @@
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\obj\Debug\net7.0\Task_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\obj\Debug\net7.0\Task_1.AssemblyInfoInputs.cache
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\obj\Debug\net7.0\Task_1.AssemblyInfo.cs
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\obj\Debug\net7.0\Task_1.csproj.CoreCompileInputs.cache
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\bin\Debug\net7.0\Task_1.exe
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\bin\Debug\net7.0\Task_1.deps.json
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\bin\Debug\net7.0\Task_1.runtimeconfig.json
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\bin\Debug\net7.0\Task_1.dll
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\bin\Debug\net7.0\Task_1.pdb
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\obj\Debug\net7.0\Task_1.dll
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\obj\Debug\net7.0\refint\Task_1.dll
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\obj\Debug\net7.0\Task_1.pdb
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\obj\Debug\net7.0\Task_1.genruntimeconfig.cache
+C:\Users\Honor\Desktop\study C#\codeMasterTasks\WorkWithFiles\Task_1\obj\Debug\net7.0\ref\Task_1.dll
