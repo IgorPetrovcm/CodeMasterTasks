@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 namespace Program 
@@ -8,6 +9,18 @@ namespace Program
     class Program 
     {
         static List<Color> colors = new List<Color>();
+        static string CheckedColorsValues(string val) 
+        {
+         foreach (Color color in colors) 
+            {
+                if ((color.RedValue == Convert.ToInt32(val[0].ToString() + val[1].ToString(), 16) ) && 
+                (color.GreenValue == Convert.ToInt32(val[2].ToString() + val[3].ToString(),16) ) && 
+                (color.BlueValue == Convert.ToInt32(val[4].ToString() + val[5].ToString(),16) ) ) {
+                    return color.Name;
+                }                
+            }
+            return val;   
+        }
         static string Format3(string val) 
         {
             string valEdit = val.Substring(1);
@@ -16,29 +29,16 @@ namespace Program
                 valEdit = valEdit.Insert(i,valEdit[i].ToString());
                 i++;
             }
-            foreach (Color color in colors) 
-            {
-                if ((color.RedValue == Convert.ToInt32(valEdit[0].ToString() + valEdit[1].ToString(), 16) ) && 
-                (color.GreenValue == Convert.ToInt32(valEdit[2].ToString() + valEdit[3].ToString(),16) ) && 
-                (color.BlueValue == Convert.ToInt32(valEdit[4].ToString() + valEdit[5].ToString(),16) ) ) {
-                    return color.Name;
-                }                
-            }
-            return val;
-
+            string valResult = CheckedColorsValues(valEdit);
+            if (valResult == valEdit) return val;
+            return valResult;
         }
         static string Format2(string val) 
         {
             string valEdit = val.Substring(1).ToUpper();
-            foreach (Color color in colors) 
-            {
-                if ((color.RedValue == Convert.ToInt32(valEdit[0].ToString() + valEdit[1].ToString(), 16) ) && 
-                (color.GreenValue == Convert.ToInt32(valEdit[2].ToString() + valEdit[3].ToString(),16) ) && 
-                (color.BlueValue == Convert.ToInt32(valEdit[4].ToString() + valEdit[5].ToString(),16) ) ) {
-                    return color.Name;
-                }                
-            }
-            return val;
+            string valResult = CheckedColorsValues(valEdit);
+            if (valResult == valEdit) return val;
+            return valResult;
         }
         static string Format1(string val) 
         {
