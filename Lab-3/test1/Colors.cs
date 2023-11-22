@@ -1,7 +1,7 @@
 using System;
 namespace Program 
 {
-    class Color 
+    public class Color
     {
         int redValue;
         int greenValue;
@@ -32,6 +32,11 @@ namespace Program
             RedValue = Convert.ToInt32(lineValues[0].ToString() + lineValues[1].ToString(), 16);
             GreenValue = Convert.ToInt32(lineValues[2].ToString() + lineValues[3].ToString(), 16);
             BlueValue = Convert.ToInt32(lineValues[4].ToString() + lineValues[5].ToString(), 16);
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}\t{RedValue}-{GreenValue}-{BlueValue}";
         }
     }
 }
