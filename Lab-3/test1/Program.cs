@@ -8,10 +8,23 @@ namespace Program
     class Program 
     {
         static List<Color> colors = new List<Color>();
+        static string Format2(string val) 
+        {
+            string valEdit = val.Substring(1).ToUpper();
+            foreach (Color color in colors) 
+            {
+                if ((color.RedValue == Convert.ToInt32(valEdit[0].ToString() + valEdit[1].ToString(), 16) ) && 
+                (color.GreenValue == Convert.ToInt32(valEdit[2].ToString() + valEdit[3].ToString(),16) ) && 
+                (color.BlueValue == Convert.ToInt32(valEdit[4].ToString() + valEdit[5].ToString(),16) ) ) {
+                    return color.Name;
+                }                
+            }
+            return val;
+        }
         static string Format1(string val) 
         {
-            string valReplace = val.Replace("rgb(","").Replace(")","");
-            string[] values = valReplace.Split(", ");
+            string valEdit = val.Replace("rgb(","").Replace(")","");
+            string[] values = valEdit.Split(", ");
             foreach (Color color in colors) 
             {
                 if ( (color.RedValue == int.Parse(values[0])) && 
@@ -55,6 +68,10 @@ namespace Program
                     string matchNewName;
                     foreach (Match match in Regex.Matches(line,regex1)) {
                         matchNewName = Format1(match.Value);
+                        line = line.Replace(match.Value, matchNewName.ToString());
+                    }
+                    foreach (Match match in Regex.Matches(line, regex2)) {
+                        matchNewName = Format2(match.Value);
                         line = line.Replace(match.Value, matchNewName.ToString());
                     }
                     writer.WriteLine(line);
