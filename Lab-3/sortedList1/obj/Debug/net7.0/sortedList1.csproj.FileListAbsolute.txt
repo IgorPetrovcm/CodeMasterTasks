@@ -1,0 +1,14 @@
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\bin\Debug\net7.0\sortedList1.exe
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\bin\Debug\net7.0\sortedList1.deps.json
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\bin\Debug\net7.0\sortedList1.runtimeconfig.json
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\bin\Debug\net7.0\sortedList1.dll
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\bin\Debug\net7.0\sortedList1.pdb
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\obj\Debug\net7.0\sortedList1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\obj\Debug\net7.0\sortedList1.AssemblyInfoInputs.cache
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\obj\Debug\net7.0\sortedList1.AssemblyInfo.cs
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\obj\Debug\net7.0\sortedList1.csproj.CoreCompileInputs.cache
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\obj\Debug\net7.0\sortedList1.dll
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\obj\Debug\net7.0\refint\sortedList1.dll
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\obj\Debug\net7.0\sortedList1.pdb
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\obj\Debug\net7.0\sortedList1.genruntimeconfig.cache
+C:\Users\Honor\Desktop\study C#\заметки\Test\sortedList1\obj\Debug\net7.0\ref\sortedList1.dll
