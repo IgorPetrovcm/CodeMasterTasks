@@ -38,5 +38,9 @@ namespace Program
         {
             return $"{Name}\t{RedValue}-{GreenValue}-{BlueValue}";
         }
+        public int ReturnAllValue() 
+        {
+            return Convert.ToInt32($"{RedValue}{GreenValue}{BlueValue}");
+        }
     }
 }

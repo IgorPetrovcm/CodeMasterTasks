@@ -8,14 +8,24 @@ namespace Program
 {
     class Program 
     {
+        static SortedList<int,string> colorsSorted = new SortedList<int,string>();
         static List<Color> colors = new List<Color>();
+        static void AddColorInSortedList(Color color) 
+        {
+            foreach (int colorCheck in colorsSorted.Keys) 
+            {
+                if (color.ReturnAllValue() == colorCheck) return;
+            }
+            colorsSorted.Add(color.ReturnAllValue(),color.Name);            
+        }
         static string CheckedColorsValues(string val) 
         {
          foreach (Color color in colors) 
             {
                 if ((color.RedValue == Convert.ToInt32(val[0].ToString() + val[1].ToString(), 16) ) && 
                 (color.GreenValue == Convert.ToInt32(val[2].ToString() + val[3].ToString(),16) ) && 
-                (color.BlueValue == Convert.ToInt32(val[4].ToString() + val[5].ToString(),16) ) ) {
+                (color.BlueValue == Convert.ToInt32(val[4].ToString() + val[5].ToString(),16) ) ) {   
+                    AddColorInSortedList(color);                 
                     return color.Name;
                 }                
             }
@@ -49,6 +59,7 @@ namespace Program
                 if ( (color.RedValue == int.Parse(values[0])) && 
                 (color.GreenValue == int.Parse(values[1])) && 
                 (color.BlueValue == int.Parse(values[2])) ) {
+                    AddColorInSortedList(color);
                     return color.Name;
                 }
             }
@@ -70,9 +81,10 @@ namespace Program
 
             string pathSourceFile = @"C:\Users\Honor\Desktop\study C#\заметки\igor_petrov\Lab-3\ColorReplacement\Data\source.txt";
             string pathTargetFile = @"C:\Users\Honor\Desktop\study C#\заметки\igor_petrov\Lab-3\ColorReplacement\Data\target.txt";
-            if (File.Exists(pathTargetFile)) {
-                File.Delete(pathTargetFile);                
-            }
+            string pathUsedColorsFile = @"C:\Users\Honor\Desktop\study C#\заметки\igor_petrov\Lab-3\ColorReplacement\Data\used_colors.txt";
+
+            if (File.Exists(pathTargetFile)) File.Delete(pathTargetFile);
+            if (File.Exists(pathUsedColorsFile)) File.Delete(pathUsedColorsFile);
 
             using (var writer = new StreamWriter(pathTargetFile))
             using (var reader = new StreamReader(pathSourceFile)) 
@@ -100,6 +112,14 @@ namespace Program
                     writer.WriteLine(line);
                 }
             }
+            using (var writer = new StreamWriter(pathUsedColorsFile)) 
+            {
+                foreach (var color in colorsSorted) 
+                {
+                    writer.WriteLine(color.Key + " " + color.Value);
+                }
+            }
+
         }
     }
 }
