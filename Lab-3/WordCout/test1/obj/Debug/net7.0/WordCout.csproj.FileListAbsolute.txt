@@ -1,0 +1,14 @@
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\obj\Debug\net7.0\WordCout.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\obj\Debug\net7.0\WordCout.AssemblyInfoInputs.cache
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\obj\Debug\net7.0\WordCout.AssemblyInfo.cs
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\obj\Debug\net7.0\WordCout.csproj.CoreCompileInputs.cache
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\bin\Debug\net7.0\WordCout.exe
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\bin\Debug\net7.0\WordCout.deps.json
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\bin\Debug\net7.0\WordCout.runtimeconfig.json
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\bin\Debug\net7.0\WordCout.dll
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\bin\Debug\net7.0\WordCout.pdb
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\obj\Debug\net7.0\WordCout.dll
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\obj\Debug\net7.0\refint\WordCout.dll
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\obj\Debug\net7.0\WordCout.pdb
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\obj\Debug\net7.0\WordCout.genruntimeconfig.cache
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\obj\Debug\net7.0\ref\WordCout.dll
