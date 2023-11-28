@@ -11,24 +11,24 @@
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-            string file1Text = File.ReadAllText(@"C:\Users\Honor\Desktop\study C#\заметки\igor_petrov\Lab-3" +
+            string text = File.ReadAllText(@"C:\Users\Honor\Desktop\study C#\заметки\igor_petrov\Lab-3" +
             @"\WordCount\Data\Беда_одна_не_ходит.txt");
-            /*byte[] bytes = File.ReadAllBytes(@"C:\Users\Honor\Desktop\study C#\заметки\igor_petrov\Lab-3" +
-            @"\WordCount\Data\Начало.txt");*/
-            file1Text += File.ReadAllText(@"C:\Users\Honor\Desktop\study C#\заметки\igor_petrov\Lab-3\" + 
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            text += File.ReadAllText(@"C:\Users\Honor\Desktop\study C#\заметки\igor_petrov\Lab-3" +
+            @"\WordCount\Data\Начало.txt",Encoding.GetEncoding(1251));
+            text += File.ReadAllText(@"C:\Users\Honor\Desktop\study C#\заметки\igor_petrov\Lab-3\" + 
             @"WordCount\Data\Хэппи_Энд.txt");
 
-            file1Text = Regex.Replace(file1Text, @"[\r\n\t]", "");
-            file1Text = file1Text.Replace(".","").Replace("-","").Replace("?","").Replace(",","").Replace("!","").Replace(@"""","").ToLower();
-
-            System.Console.WriteLine(file1Text.Length);
+            text = Regex.Replace(text, @"[\r\n\t]", "");
+            text = text.Replace(".","").Replace("-","").Replace("?","").Replace(",","").Replace("!","").Replace(@"""","").ToLower();
             
-            string[] words = file1Text.Split(' ');
+            string[] words = text.Split(' ');
             HashSet<string> hashes = new HashSet<string>();
             foreach (string word in words) {
                 hashes.Add(word);
             }
             hashes.Remove("");
+            System.Console.WriteLine(hashes.Count);
         }
 
     }
