@@ -1,46 +1,46 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 namespace Program 
 {
     public class Color
     {
-        int redValue;
-        int greenValue;
-        int blueValue;
-        string name;
-
-        public int RedValue {get {return redValue;} private set {redValue = value;}}
-        public int GreenValue {get {return greenValue;} private set {greenValue = value;}}
-        public int BlueValue {get {return blueValue;} private set {blueValue = value;}}
-        public string Name {get {return name;} private set {name = value;}}
+        public int redValue {get;private set;}
+        public int greenValue {get;private set;}
+        public int blueValue {get;private set;}
+        public string name {get;private set;}
 
         public Color(int redVal=0, int greenVal=0, int blueVal=0, string name=null) 
         {
-            RedValue = redVal;
-            GreenValue = greenVal;
-            BlueValue = blueVal;
-            Name = name;
+            this.redValue = redVal;
+            this.greenValue = greenVal;
+            this.blueValue = blueVal;
+            this.name = name;
         }
 
         public void SetValues(string line) 
         {
             int indexEndName = line.IndexOf(' ');
-            Name = line.Substring(0, indexEndName);
+            name = line.Substring(0, indexEndName);
 
             int indexValues = line.IndexOf('#');
             string lineValues = line.Substring(indexValues+1);
 
-            RedValue = Convert.ToInt32(lineValues[0].ToString() + lineValues[1].ToString(), 16);
-            GreenValue = Convert.ToInt32(lineValues[2].ToString() + lineValues[3].ToString(), 16);
-            BlueValue = Convert.ToInt32(lineValues[4].ToString() + lineValues[5].ToString(), 16);
+            redValue = Convert.ToInt32(lineValues[0].ToString() + lineValues[1].ToString(), 16);
+            greenValue = Convert.ToInt32(lineValues[2].ToString() + lineValues[3].ToString(), 16);
+            blueValue = Convert.ToInt32(lineValues[4].ToString() + lineValues[5].ToString(), 16);
         }
 
         public override string ToString()
         {
-            return $"{Name}\t{RedValue}-{GreenValue}-{BlueValue}";
+            return $"{name}\t{redValue}-{greenValue}-{blueValue}";
         }
         public int ReturnAllValue() 
         {
-            return Convert.ToInt32($"{RedValue}{GreenValue}{BlueValue}");
+            return Convert.ToInt32($"{redValue}{greenValue}{blueValue}");            
+        }
+        public string ReturnAllValue16() 
+        {
+            return redValue.ToString("X2") + greenValue.ToString("X2") + blueValue.ToString("X2");
         }
     }
 }

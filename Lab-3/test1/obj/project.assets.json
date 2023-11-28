@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Honor\\Desktop\\study C#\\заметки\\Test\\test1\\test1.csproj",
+      "projectUniqueName": "C:\\Users\\Honor\\Desktop\\study C#\\заметки\\Test\\ColorsReplacement\\test1\\test1.csproj",
       "projectName": "test1",
-      "projectPath": "C:\\Users\\Honor\\Desktop\\study C#\\заметки\\Test\\test1\\test1.csproj",
+      "projectPath": "C:\\Users\\Honor\\Desktop\\study C#\\заметки\\Test\\ColorsReplacement\\test1\\test1.csproj",
       "packagesPath": "C:\\Users\\Honor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Honor\\Desktop\\study C#\\заметки\\Test\\test1\\obj\\",
+      "outputPath": "C:\\Users\\Honor\\Desktop\\study C#\\заметки\\Test\\ColorsReplacement\\test1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Honor\\AppData\\Roaming\\NuGet\\NuGet.Config",
