@@ -24,7 +24,10 @@ namespace Program
 
             list.AddToBegin("vlad1");
 
+            System.Console.WriteLine(list.ToString());
+            
             list.Clear();
+            //РАБОТАЕЕЕТ
         }
     }
 }

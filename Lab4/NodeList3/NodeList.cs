@@ -1,5 +1,5 @@
 namespace Program;
-
+using System.Text;
 public class Node<T>
 {
     public T value;
@@ -157,5 +157,16 @@ public class NodeList<T>
         head = null;
         tail = null;
         count = 0;
+    }
+    public override string ToString()
+    {
+        var str= new StringBuilder();
+        Node<T> node = head;
+        while (node != null) 
+        {
+            str.Append(node.value + "\n");
+            node = node.next;
+        }
+        return str.ToString();
     }
 }
