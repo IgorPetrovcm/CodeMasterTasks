@@ -76,6 +76,38 @@ public class NodeList<T>
             node = node.next;
         }
     }
+    public void Remove(int index) 
+    {
+        
+        Node<T> node = head;
+        Node<T> prev = null;
+        while (node != null)
+        {
+            if (node.value.Equals(value)) 
+            {
+                if (node == head) {
+                    if (head.next == null) {
+                        head = null;
+                        tail = null;
+                        return;
+                    }
+                    else {
+                        head = head.next;
+                        return;
+                    }
+                }
+                else if (node == tail) {
+                    prev.next = null;
+                    tail = prev;
+                    return;
+                }
+                prev.next = node.next;
+
+            }
+            prev = node;
+            node = node.next;
+        }
+    }
     public bool Contains(T value) 
     {
         Node<T> node = head;
@@ -86,4 +118,34 @@ public class NodeList<T>
         }
         return false;
     } 
+    public object GetIndex(T value) 
+    {
+        Node<T> node = head;
+        int index = 0;
+        while (node != null) 
+        {
+            if (node.value.Equals(value)) return index;
+            node = node.next;
+            index++;
+        }
+        return false;
+    }
+    public T GetByIndex(int index) 
+    {
+        Node<T> node= head;
+        int count = 0;
+        while (node != null) 
+        {
+            if (index == count) return node.value;
+            node = node.next;
+            count++;
+        }
+        return default(T);
+    }
+    public void Clear() 
+    {
+        head = null;
+        tail = null;
+        count = 0;
+    }
 }
