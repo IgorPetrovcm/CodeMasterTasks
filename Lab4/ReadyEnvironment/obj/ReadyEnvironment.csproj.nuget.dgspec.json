@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\library_test\\NodeList\\NodeList.csproj": {}
+    "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\ReadyEnvironment\\ReadyEnvironment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\library_test\\NodeList\\NodeList.csproj": {
+    "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\ReadyEnvironment\\ReadyEnvironment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\library_test\\NodeList\\NodeList.csproj",
-        "projectName": "NodeList",
-        "projectPath": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\library_test\\NodeList\\NodeList.csproj",
+        "projectUniqueName": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\ReadyEnvironment\\ReadyEnvironment.csproj",
+        "projectName": "ReadyEnvironment",
+        "projectPath": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\ReadyEnvironment\\ReadyEnvironment.csproj",
         "packagesPath": "C:\\Users\\Honor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\library_test\\NodeList\\obj\\",
+        "outputPath": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\ReadyEnvironment\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Honor\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,28 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.7.1, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

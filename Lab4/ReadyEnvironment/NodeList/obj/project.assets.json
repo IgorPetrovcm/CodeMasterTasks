@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\library_test\\NodeList\\NodeList.csproj",
+      "projectUniqueName": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\ReadyEnvironment\\NodeList\\NodeList.csproj",
       "projectName": "NodeList",
-      "projectPath": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\library_test\\NodeList\\NodeList.csproj",
+      "projectPath": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\ReadyEnvironment\\NodeList\\NodeList.csproj",
       "packagesPath": "C:\\Users\\Honor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\library_test\\NodeList\\obj\\",
+      "outputPath": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\ReadyEnvironment\\NodeList\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Honor\\AppData\\Roaming\\NuGet\\NuGet.Config",

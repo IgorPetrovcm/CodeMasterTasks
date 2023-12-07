@@ -1,0 +1,11 @@
+C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\NodeList\bin\Debug\net7.0\NodeList.deps.json
+C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\NodeList\bin\Debug\net7.0\NodeList.dll
+C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\NodeList\bin\Debug\net7.0\NodeList.pdb
+C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\NodeList\obj\Debug\net7.0\NodeList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\NodeList\obj\Debug\net7.0\NodeList.AssemblyInfoInputs.cache
+C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\NodeList\obj\Debug\net7.0\NodeList.AssemblyInfo.cs
+C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\NodeList\obj\Debug\net7.0\NodeList.csproj.CoreCompileInputs.cache
+C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\NodeList\obj\Debug\net7.0\NodeList.dll
+C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\NodeList\obj\Debug\net7.0\refint\NodeList.dll
+C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\NodeList\obj\Debug\net7.0\NodeList.pdb
+C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\NodeList\obj\Debug\net7.0\ref\NodeList.dll
