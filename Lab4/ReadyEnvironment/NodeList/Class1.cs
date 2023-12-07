@@ -76,4 +76,13 @@ public class NodeList<T>
             node = node.next;
         }
     }
+    public bool Contains(T value) 
+    {
+        Node<T> node = head;
+        while (node != null) 
+        {
+            if (node.value.Equals(value)) return true;
+        }
+        return false;
+    } 
 }
