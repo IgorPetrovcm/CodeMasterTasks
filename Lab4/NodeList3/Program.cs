@@ -11,12 +11,20 @@ namespace Program
             list.Add("vlad"); 
             list.Add("vlad1");
             list.Add("vlad2");
+
             System.Console.WriteLine(list.GetIndex("vlad2"));
-            System.Console.WriteLine(list.GetByIndex(0));
-            list.Remove("vlad232");
+            System.Console.WriteLine(list.GetByIndex(0));            
+
             check = list.Contains("vlad123");
             check = list.Contains("vlad");
+
+            list.Remove("vlad232");
             list.Remove("vlad");
+            list.Remove(0);
+
+            list.AddToBegin("vlad1");
+
+            list.Clear();
         }
     }
 }

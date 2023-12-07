@@ -57,20 +57,24 @@ public class NodeList<T>
                     if (head.next == null) {
                         head = null;
                         tail = null;
+                        this.count--;
                         return;
                     }
                     else {
                         head = head.next;
+                        this.count--;
                         return;
                     }
                 }
                 else if (node == tail) {
                     prev.next = null;
                     tail = prev;
+                    this.count--;
                     return;
                 }
                 prev.next = node.next;
-
+                this.count--;
+                return;
             }
             prev = node;
             node = node.next;
@@ -81,31 +85,37 @@ public class NodeList<T>
         
         Node<T> node = head;
         Node<T> prev = null;
+        int count = 0;
         while (node != null)
         {
-            if (node.value.Equals(value)) 
+            if (count == index) 
             {
                 if (node == head) {
                     if (head.next == null) {
                         head = null;
                         tail = null;
+                        this.count--;
                         return;
                     }
                     else {
                         head = head.next;
+                        this.count--;
                         return;
                     }
                 }
                 else if (node == tail) {
                     prev.next = null;
                     tail = prev;
+                    this.count--;
                     return;
                 }
                 prev.next = node.next;
-
+                this.count--;
+                return;
             }
             prev = node;
             node = node.next;
+            count++;
         }
     }
     public bool Contains(T value) 
