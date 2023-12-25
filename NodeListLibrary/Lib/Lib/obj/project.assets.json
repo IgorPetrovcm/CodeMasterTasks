@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\ClassLibNew\\Lib\\Lib\\Lib.csproj",
+      "projectUniqueName": "C:\\Users\\Honor\\Desktop\\study_C#\\NodeListLibrary\\Lib\\Lib\\Lib.csproj",
       "projectName": "Lib",
-      "projectPath": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\ClassLibNew\\Lib\\Lib\\Lib.csproj",
+      "projectPath": "C:\\Users\\Honor\\Desktop\\study_C#\\NodeListLibrary\\Lib\\Lib\\Lib.csproj",
       "packagesPath": "C:\\Users\\Honor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Honor\\Desktop\\study_C#\\code\\CodeMasterTasks\\Lab4\\ClassLibNew\\Lib\\Lib\\obj\\",
+      "outputPath": "C:\\Users\\Honor\\Desktop\\study_C#\\NodeListLibrary\\Lib\\Lib\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Honor\\AppData\\Roaming\\NuGet\\NuGet.Config",
