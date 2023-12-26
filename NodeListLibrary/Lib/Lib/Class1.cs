@@ -1,4 +1,7 @@
-﻿namespace NodeListLib;
+﻿using System.ComponentModel;
+using System.Net.Http.Headers;
+
+namespace NodeListLib;
 
 public class Node<T>
 {
@@ -125,6 +128,43 @@ public class NodeList<T>
         count--;
 
         return;
+    }
+
+    public static NodeList<T> UploadUsingArray(T[] arr)
+    {
+        if (arr == null) throw new NullReferenceException("Upload array is empty");
+
+        NodeList<T> nodes = AddedElementsFromI(arr);
+
+        return nodes;
+    }
+    public static NodeList<T> UploadUsingList(IList<T> list)
+    {
+        if (list == null) throw new NullReferenceException("Upload list is empty");
+
+        NodeList<T> nodes = AddedElementsFromI(list);
+
+        return nodes;
+    }
+    public static NodeList<T> UploadUsingEnumerable(IEnumerable<T> elements)
+    {
+        if (elements == null) throw new NullReferenceException("Upload struct is empty");
+
+        NodeList<T> nodes = AddedElementsFromI(elements);
+
+        return nodes; 
+    }
+
+    public static NodeList<T> AddedElementsFromI(IEnumerable<T> elements)
+    {
+        NodeList<T> nodes = new NodeList<T>();
+
+        foreach (var element in elements)
+        {
+            nodes.Add(element);
+        }
+
+        return nodes;
     }
 
 }

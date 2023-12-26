@@ -22,5 +22,9 @@ class Program
         nodes.Remove(9);
 
         System.Console.WriteLine(nodes.Count + "\n" + nodes.ToString());
+
+        nodes.RemoveFromTail();
+
+        System.Console.WriteLine(nodes.ToString());
     }
 }
