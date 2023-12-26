@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "N9pfJKSePSh2+SBnf/A1BkvNiyO76f79vhzaGA9QR2vyzxPLEzkXBJpmS2fb/YfXnO/fEjC6PoWa4JFuCXRpHA==",
+  "dgSpecHash": "6Gu2duhFSlph02Iuy7vXaaQLikd9HHKe9KtT4T/dPVyDfyhsksOlNA9WUcDht/sTAxBFM3SK+kITMo04fQEd6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Honor\\Desktop\\study_C#\\NodeListLibrary\\Lib\\Lib\\Lib.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/admin/General/CodeMasterTasks/NodeListLibrary/Lib/Lib/Lib.csproj",
+  "expectedPackageFiles": [
+    "/home/admin/.nuget/packages/microsoft.netcore.app.ref/6.0.24/microsoft.netcore.app.ref.6.0.24.nupkg.sha512",
+    "/home/admin/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.24/microsoft.aspnetcore.app.ref.6.0.24.nupkg.sha512"
+  ],
   "logs": []
 }

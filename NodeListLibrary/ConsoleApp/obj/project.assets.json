@@ -1,11 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net7.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net7.0": []
   },
   "packageFolders": {
     "/home/admin/.nuget/packages/": {}
@@ -13,24 +13,24 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/admin/General/CodeMasterTasks/NodeListLibrary/Lib/Lib/Lib.csproj",
-      "projectName": "Lib",
-      "projectPath": "/home/admin/General/CodeMasterTasks/NodeListLibrary/Lib/Lib/Lib.csproj",
+      "projectUniqueName": "/home/admin/General/CodeMasterTasks/NodeListLibrary/ConsoleApp/ConsoleApp.csproj",
+      "projectName": "ConsoleApp",
+      "projectPath": "/home/admin/General/CodeMasterTasks/NodeListLibrary/ConsoleApp/ConsoleApp.csproj",
       "packagesPath": "/home/admin/.nuget/packages/",
-      "outputPath": "/home/admin/General/CodeMasterTasks/NodeListLibrary/Lib/Lib/obj/",
+      "outputPath": "/home/admin/General/CodeMasterTasks/NodeListLibrary/ConsoleApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/admin/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net7.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "projectReferences": {}
         }
       },
@@ -41,8 +41,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net7.0": {
+        "targetAlias": "net7.0",
         "imports": [
           "net461",
           "net462",
@@ -54,16 +54,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.24, 6.0.24]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.24, 6.0.24]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
