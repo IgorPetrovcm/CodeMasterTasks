@@ -6,6 +6,10 @@ class Program
 {
     static void Main()
     {
+        Test2();
+    }
+    private static void Test1()
+    {
         NodeList<int> nodes = new NodeList<int>();
 
         for (int i = 0; i < 10; i++)
@@ -27,4 +31,24 @@ class Program
 
         System.Console.WriteLine(nodes.ToString());
     }
+    private static void Test2()
+    {
+        int[] array = {1,2,3,4,5,6,7};
+
+        List<int> list = new List<int>(){
+            1,2,3,4,5,6,7,8
+        };
+
+        Stack<int> elements = new Stack<int>();
+        for (int i = 0; i < 10; i++) elements.Push(i);
+
+        NodeList<int> nodes = NodeList<int>.UploadUsingArray(array);
+        System.Console.WriteLine(nodes.ToString());
+
+        nodes = NodeList<int>.UploadUsingList(list);
+        System.Console.WriteLine(nodes.ToString());
+
+        nodes = NodeList<int>.UploadUsingEnumerable(elements);
+        System.Console.WriteLine(nodes.ToString());
+    } 
 }
