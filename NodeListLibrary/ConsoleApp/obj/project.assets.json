@@ -8,24 +8,26 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/home/admin/.nuget/packages/": {}
+    "C:\\Users\\Honor\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/admin/General/CodeMasterTasks/NodeListLibrary/ConsoleApp/ConsoleApp.csproj",
+      "projectUniqueName": "C:\\Users\\Honor\\Desktop\\study_C#\\CodeMasterTasks\\NodeListLibrary\\ConsoleApp\\ConsoleApp.csproj",
       "projectName": "ConsoleApp",
-      "projectPath": "/home/admin/General/CodeMasterTasks/NodeListLibrary/ConsoleApp/ConsoleApp.csproj",
-      "packagesPath": "/home/admin/.nuget/packages/",
-      "outputPath": "/home/admin/General/CodeMasterTasks/NodeListLibrary/ConsoleApp/obj/",
+      "projectPath": "C:\\Users\\Honor\\Desktop\\study_C#\\CodeMasterTasks\\NodeListLibrary\\ConsoleApp\\ConsoleApp.csproj",
+      "packagesPath": "C:\\Users\\Honor\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Honor\\Desktop\\study_C#\\CodeMasterTasks\\NodeListLibrary\\ConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/admin/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Honor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -59,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.403/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

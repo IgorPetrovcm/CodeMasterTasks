@@ -6,9 +6,15 @@ class Program
 {
     static void Main()
     {
-        Test2();
+        //Test2();
+        NodeList<int> nodes = new NodeList<int>();
+
+        for (int i = 0; i < 5; i++)
+        {
+            nodes.Add(i);
+        }
     }
-    private static void Test1()
+    /*private static void Test1()
     {
         NodeList<int> nodes = new NodeList<int>();
 
@@ -50,5 +56,5 @@ class Program
 
         nodes = NodeList<int>.UploadUsingEnumerable(elements);
         System.Console.WriteLine(nodes.ToString());
-    } 
+    } */
 }

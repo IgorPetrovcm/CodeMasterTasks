@@ -15,8 +15,9 @@ public class Node<T> where T : notnull
     {
         this.Value = value;
     }
-    public Node()
-    {
 
+    public void AssignNext(Node<T> node)
+    {
+        Next = node;
     }
 }

@@ -5,17 +5,14 @@ namespace NodeListLib;
 
 public class NodeList<T>
 {
-    private Node<T> head;
-    public Node<T> Head {get => head;}
+    
+    public Node<T> Head {get; private set;}
 
-    private Node<T> tail ;
-    public Node<T> Tail {get => tail;}
+    public Node<T> Tail {get; private set;}
 
     public int Count { get; private set;}
 
-    public NodeList() {  }
-
-    public override string ToString() 
+    /*public override string ToString() 
     {
         string output = "";
 
@@ -28,32 +25,32 @@ public class NodeList<T>
         }
 
         return output;
-    }
+    }*/
 
     public void Add(T value)
     {
-        if (value == null) throw new NullReferenceException("Added value id empty");
-
         Node<T> node = new Node<T>(value);
-
-        if (head == null)
+        if (Head == null)
         {
-            head = node;
-            head.Next = node;
-            tail = node;
+            Head = node;
 
-            count++;
+            Head.AssignNext(node);
+
+            Tail = node;
+
+            Count++;
 
             return;
         }
 
-        tail.Next = node;
-        tail = node;
+        Tail.AssignNext(node);
+
+        Tail = node;
         
-        count++;
+        Count++;
     }
 
-    public void Remove(T value)
+    /*public void Remove(T value)
     {
         if (head == null) throw new NullReferenceException("Head does not exist");
 
@@ -144,6 +141,6 @@ public class NodeList<T>
         }
 
         return nodes;
-    }
+    }*/
 
 }
