@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.Net.Http.Headers;
+﻿using System.Text;
 
 namespace NodeListLib;
 
@@ -12,20 +11,20 @@ public class NodeList<T>
 
     public int Count { get; private set;}
 
-    /*public override string ToString() 
+    public override string ToString() 
     {
-        string output = "";
+        StringBuilder output = new StringBuilder();
 
-        Node<T> node = head;
+        Node<T> node = Head;
 
         while (node != null)
         {
-            output += node.Value + "\n";
+            output.Append(node.Value + "\n");
             node = node.Next;
         }
 
-        return output;
-    }*/
+        return output.ToString();
+    }
 
     public void Add(T value)
     {
@@ -50,89 +49,53 @@ public class NodeList<T>
         Count++;
     }
 
-    /*public void Remove(T value)
+    public void Remove(T value)
     {
-        if (head == null) throw new NullReferenceException("Head does not exist");
+        if (Head == null) throw new NullReferenceException("List values does not exist");
 
-        Node<T> node = head;
+        Node<T> node = Head;
 
-        Node<T> prev = null;
+        Node<T>? prev = null;
 
         while (node !=  null)
         {
-            if (node.value.Equals(value))
+            if (node.Value.Equals(value))
             {
-                if (node == tail){
-                    prev.next = null;
-                    tail = prev;
+                if (node == Tail){
+                    prev.AssignNext(null);
 
-                    count--;
+                    Tail = prev;
+
+                    Count--;
 
                     return;
                 }
-                if (node == head)
+                if (node == Head)
                 {
-                    head = node.next;
+                    Head = node.Next;
 
-                    count--;
+                    Count--;
 
                     return;
                 }
-                prev.next = node.next;
 
-                count--;
+                prev.AssignNext(node.Next);
+
+                Count--;
 
                 return;
             }
             prev = node;
             
-            node = node.next;
+            node = node.Next;
         }
         return;
     }
-    public void RemoveFromTail()
-    {
-        if (head == null) throw new NullReferenceException("Head does not exist");
 
-        Node<T> node = head;
-
-        while (node.next != tail) node = node.next;
-        
-        node.next = null;
-        tail = node;
-
-        count--;
-
-        return;
-    }
-
-    public static NodeList<T> UploadUsingArray(T[] arr)
-    {
-        if (arr == null) throw new NullReferenceException("Upload array is empty");
-
-        NodeList<T> nodes = AddedElementsFromI(arr);
-
-        return nodes;
-    }
-    public static NodeList<T> UploadUsingList(IList<T> list)
-    {
-        if (list == null) throw new NullReferenceException("Upload list is empty");
-
-        NodeList<T> nodes = AddedElementsFromI(list);
-
-        return nodes;
-    }
     public static NodeList<T> UploadUsingEnumerable(IEnumerable<T> elements)
     {
         if (elements == null) throw new NullReferenceException("Upload struct is empty");
 
-        NodeList<T> nodes = AddedElementsFromI(elements);
-
-        return nodes; 
-    }
-
-    public static NodeList<T> AddedElementsFromI(IEnumerable<T> elements)
-    {
         NodeList<T> nodes = new NodeList<T>();
 
         foreach (var element in elements)
@@ -140,7 +103,7 @@ public class NodeList<T>
             nodes.Add(element);
         }
 
-        return nodes;
-    }*/
+        return nodes; 
+    }
 
 }

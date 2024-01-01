@@ -6,15 +6,10 @@ class Program
 {
     static void Main()
     {
-        //Test2();
-        NodeList<int> nodes = new NodeList<int>();
-
-        for (int i = 0; i < 5; i++)
-        {
-            nodes.Add(i);
-        }
+        Test1();
+        Test2();
     }
-    /*private static void Test1()
+    private static void Test1()
     {
         NodeList<int> nodes = new NodeList<int>();
 
@@ -28,14 +23,10 @@ class Program
         System.Console.WriteLine(nodes.ToString());
 
         nodes.Remove(0);
-        nodes.Remove(1);
+        nodes.Remove(2);
         nodes.Remove(9);
 
         System.Console.WriteLine(nodes.Count + "\n" + nodes.ToString());
-
-        nodes.RemoveFromTail();
-
-        System.Console.WriteLine(nodes.ToString());
     }
     private static void Test2()
     {
@@ -48,13 +39,13 @@ class Program
         Stack<int> elements = new Stack<int>();
         for (int i = 0; i < 10; i++) elements.Push(i);
 
-        NodeList<int> nodes = NodeList<int>.UploadUsingArray(array);
+        NodeList<int> nodes = NodeList<int>.UploadUsingEnumerable(elements);
         System.Console.WriteLine(nodes.ToString());
 
-        nodes = NodeList<int>.UploadUsingList(list);
+        nodes = NodeList<int>.UploadUsingEnumerable(list);
         System.Console.WriteLine(nodes.ToString());
 
-        nodes = NodeList<int>.UploadUsingEnumerable(elements);
+        nodes = NodeList<int>.UploadUsingEnumerable(array);
         System.Console.WriteLine(nodes.ToString());
-    } */
+    } 
 }
