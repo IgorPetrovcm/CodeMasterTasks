@@ -186,19 +186,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\igorp\\.nuget\\packages\\": {}
+    "C:\\Users\\Honor\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\igorp\\Programming\\igor_petrov\\Lab-4\\Scene2d\\Scene2d.csproj",
+      "projectUniqueName": "C:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
       "projectName": "Scene2d",
-      "projectPath": "c:\\Users\\igorp\\Programming\\igor_petrov\\Lab-4\\Scene2d\\Scene2d.csproj",
-      "packagesPath": "C:\\Users\\igorp\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\igorp\\Programming\\igor_petrov\\Lab-4\\Scene2d\\obj\\",
+      "projectPath": "C:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
+      "packagesPath": "C:\\Users\\Honor\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\igorp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Honor\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -245,24 +245,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

@@ -1,7 +1,10 @@
 namespace Scene2d.Figures
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Drawing;
+    using System.Linq;
 
     public class RectangleFigure : IFigure
     {
@@ -13,10 +16,11 @@ namespace Scene2d.Figures
 
         public RectangleFigure(ScenePoint p1, ScenePoint p2)
         {
-            _p1 = p1;
-            _p2 = new ScenePoint { X = p2.X, Y = p1.Y };
-            _p3 = p2;
-            _p4 = new ScenePoint { X = p1.X, Y = p2.Y };
+            //Предположим p1 x=100,y=80  p2 x=80,y=100
+            _p1 = p1; //_p1 x=100,y=80
+            _p2 = new ScenePoint { X = p2.X, Y = p1.Y };//_p2 x=80,y=80
+            _p3 = p2; //_p3 x=80,y=100
+            _p4 = new ScenePoint { X = p1.X, Y = p2.Y };//_p4 x=100,y=100
         }
 
         public object Clone()
@@ -30,7 +34,21 @@ namespace Scene2d.Figures
         {
             /* Should calculate the rectangle that wraps current figure and has edges parallel to X and Y */
 
-            throw new NotImplementedException();
+            List<double> xCollection = new List<double>();
+            List<double> yCollection = new List<double>();
+
+            foreach (ScenePoint point in GetPoints())
+            {
+                xCollection.Add(point.X);
+                yCollection.Add(point.Y);
+            }
+
+            SceneRectangle sceneRectangle = new SceneRectangle();
+
+            sceneRectangle.Vertex1 = new ScenePoint(xCollection.Min(), yCollection.Max());
+            sceneRectangle.Vertex2 = new ScenePoint(xCollection.Max(), yCollection.Min());
+
+            return sceneRectangle;
         }
 
         public void Move(ScenePoint vector)
@@ -88,6 +106,14 @@ namespace Scene2d.Figures
                     (float)(_p1.X - origin.X),
                     (float)(_p1.Y - origin.Y));
             }
+        }
+
+        private IEnumerable<ScenePoint> GetPoints()
+        {
+            yield return _p1;
+            yield return _p2;
+            yield return _p3;
+            yield return _p4;
         }
     }
 }
