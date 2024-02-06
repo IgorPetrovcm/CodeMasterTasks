@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "2bo30CGyHs4zxIDjeV44tBRdBaDnfvhEuvadPJh6MIkkdhNk5psLfe8kU7/SPed4MRjctOlNNd96zwHMC177KA==",
+  "dgSpecHash": "jvJ61i3J8L+Jc2JeC8LzFdiADpp9DZwigZrShNF87QtiQpRP1tOKUfV07LfQaTlS0sE7v6yOU/j8ldp4eF9Oeg==",
   "success": true,
-  "projectFilePath": "/home/admin/Общедоступные/csStudy/CodeMasterTasks/Lab-3/ColorReplacement/ColorReplacement.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab-3\\ColorReplacement\\ColorReplacement.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\igorp\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\igorp\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\igorp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\igorp\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.15\\microsoft.netcore.app.host.win-x64.7.0.15.nupkg.sha512"
+  ],
   "logs": []
 }

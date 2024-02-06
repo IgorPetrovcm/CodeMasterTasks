@@ -2,11 +2,12 @@ namespace Scene2d.CommandBuilders
 {
     using System.Text.RegularExpressions;
     using Scene2d.Commands;
+    using Scene2d.Exceptions;
     using Scene2d.Figures;
 
     public class AddRectangleCommandBuilder : ICommandBuilder
     {
-        private static readonly Regex RecognizeRegex = new Regex("//regex to recognize all parameters of ad rectangle command");
+        private static readonly Regex RecognizeRegex = new Regex(@"add rectangle (\w+) \((\d+),(\d+)\) \((\d+),(\d+)\)");
 
         /* Should be set in AppendLine method */
         private IFigure _rectangle;
@@ -26,13 +27,19 @@ namespace Scene2d.CommandBuilders
         public void AppendLine(string line)
         {
             // check if line matches the RecognizeRegex
-            var match = RecognizeRegex.Match(line);
+            Match match = RecognizeRegex.Match(line);
 
-            // if it matches select params of rectangle
-            // name = ...
-            // rectangle = new Rectangle(p1, p2)
-            //
-            // if it does not match throw BadFormatException
+            if (match.Groups.Count == 5)
+            {
+                _name = match.Groups[1].Value;
+
+                _rectangle = new RectangleFigure(
+                    new ScenePoint(double.Parse(match.Groups[2].Value), double.Parse(match.Groups[3].Value)),
+                    new ScenePoint(double.Parse(match.Groups[4].Value), double.Parse(match.Groups[5].Value))
+                );
+            }
+            else 
+                throw new BadFormatException();
         }
 
         public ICommand GetCommand() => new AddFigureCommand(_name, _rectangle);

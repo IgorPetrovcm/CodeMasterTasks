@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/home/admin/.nuget/packages/": {}
+    "C:\\Users\\igorp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/admin/Общедоступные/csStudy/CodeMasterTasks/Lab-3/ColorReplacement/ColorReplacement.csproj",
+      "projectUniqueName": "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab-3\\ColorReplacement\\ColorReplacement.csproj",
       "projectName": "ColorReplacement",
-      "projectPath": "/home/admin/Общедоступные/csStudy/CodeMasterTasks/Lab-3/ColorReplacement/ColorReplacement.csproj",
-      "packagesPath": "/home/admin/.nuget/packages/",
-      "outputPath": "/home/admin/Общедоступные/csStudy/CodeMasterTasks/Lab-3/ColorReplacement/obj/",
+      "projectPath": "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab-3\\ColorReplacement\\ColorReplacement.csproj",
+      "packagesPath": "C:\\Users\\igorp\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab-3\\ColorReplacement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/admin/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\igorp\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -54,12 +54,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.15, 7.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.15, 7.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.15, 7.0.15]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.15, 7.0.15]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.403/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

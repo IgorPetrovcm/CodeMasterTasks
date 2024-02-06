@@ -16,11 +16,10 @@ namespace Scene2d.Figures
 
         public RectangleFigure(ScenePoint p1, ScenePoint p2)
         {
-            //Предположим p1 x=100,y=80  p2 x=80,y=100
-            _p1 = p1; //_p1 x=100,y=80
-            _p2 = new ScenePoint { X = p2.X, Y = p1.Y };//_p2 x=80,y=80
-            _p3 = p2; //_p3 x=80,y=100
-            _p4 = new ScenePoint { X = p1.X, Y = p2.Y };//_p4 x=100,y=100
+            _p1 = p1; 
+            _p2 = new ScenePoint { X = p2.X, Y = p1.Y };
+            _p3 = p2; 
+            _p4 = new ScenePoint { X = p1.X, Y = p2.Y };
         }
 
         public object Clone()
