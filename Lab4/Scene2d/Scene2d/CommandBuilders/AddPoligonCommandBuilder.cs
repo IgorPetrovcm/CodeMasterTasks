@@ -8,13 +8,29 @@ namespace Scene2d.CommandBuilders
 
     public class AddPoligonCommandBuilder : ICommandBuilder
     {
-        private static readonly Regex RecognizeRegex = new Regex(@"");
+        private static readonly Regex RecognizeRegex = new Regex(@"^(add polygon) ([a-zA-Z0-9\-_]+)|
+            (add point) \((-?\d+),\s?(-?\d+)\)|(end polygon)");
 
-        public bool IsCommandReady => throw new System.NotImplementedException();
+        private bool _isStarted = false; 
+
+        public bool IsCommandReady 
+        {
+            get 
+            {
+                if (_isStarted)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
 
         public void AppendLine(string line)
         {
-            throw new System.NotImplementedException();
+            Match match = RecognizeRegex.Match(line);
         }
 
         public ICommand GetCommand()
