@@ -17,6 +17,8 @@ namespace Scene2d
         {
             if (!_figures.ContainsKey(name))
             {
+                _figures.Add(name, figure);
+
                 return;
             }
 

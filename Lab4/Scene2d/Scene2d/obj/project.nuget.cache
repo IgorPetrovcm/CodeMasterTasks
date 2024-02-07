@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XhhY9h026NI65vKUCfT5jecWmWKko9Wfob4ylRo4qtl3iTZRdXuAMUynu+tlepG5pUqj8/u8t2ygbxD7OdQhCQ==",
+  "dgSpecHash": "E0KQa0apkqgWbE3anBJ+OR8I8yNJ9JdissqsHOw3zhwZUun03dN8jUo5IoFkrt13SEJdea67aEx2SnBR5nK6DA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
+  "projectFilePath": "c:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\igorp\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\igorp\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
