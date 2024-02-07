@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Scene2d")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68bbfd1e4cd03f4ad8efdf811c40d09a5039d001")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d7be321549f5062e4310d419b74def8c54d7004")]
 [assembly: System.Reflection.AssemblyProductAttribute("Scene2d")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Scene2d")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,7 +2,7 @@
   "profiles": {
     "Scene2d": {
       "commandName": "Project",
-
+      "commandLineArgs": "TestInputs/smile.txt"
     }
   }
 }

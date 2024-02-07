@@ -22,7 +22,6 @@ C:\Users\Honor\Desktop\Programming\CodeMasterTasks\Lab4\Scene2d\Scene2d\obj\Debu
 C:\Users\Honor\Desktop\Programming\CodeMasterTasks\Lab4\Scene2d\Scene2d\obj\Debug\net6.0\Scene2d.genruntimeconfig.cache
 C:\Users\Honor\Desktop\Programming\CodeMasterTasks\Lab4\Scene2d\Scene2d\obj\Debug\net6.0\ref\Scene2d.dll
 C:\Users\igorp\Programming\CodeMasterTasks\Lab4\Scene2d\Scene2d\bin\Debug\net6.0\Scene2d.exe
-C:\Users\igorp\Programming\CodeMasterTasks\Lab4\Scene2d\Scene2d\bin\Debug\net6.0\TestInputs\smile.txt
 C:\Users\igorp\Programming\CodeMasterTasks\Lab4\Scene2d\Scene2d\bin\Debug\net6.0\Scene2d.deps.json
 C:\Users\igorp\Programming\CodeMasterTasks\Lab4\Scene2d\Scene2d\bin\Debug\net6.0\Scene2d.runtimeconfig.json
 C:\Users\igorp\Programming\CodeMasterTasks\Lab4\Scene2d\Scene2d\bin\Debug\net6.0\Scene2d.dll

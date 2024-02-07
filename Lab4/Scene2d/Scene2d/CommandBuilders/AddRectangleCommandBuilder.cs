@@ -7,7 +7,7 @@ namespace Scene2d.CommandBuilders
 
     public class AddRectangleCommandBuilder : ICommandBuilder
     {
-        private static readonly Regex RecognizeRegex = new Regex(@"add rectangle (\w+) \((\d+),(\d+)\) \((\d+),(\d+)\)");
+        private static readonly Regex RecognizeRegex = new Regex(@"add rectangle ([a-zA-Z0-9\-_]+) \((-?\d+),\s?(-?\d+)\) \((-?\d+),\s?(-?\d+)\)");
 
         /* Should be set in AppendLine method */
         private IFigure _rectangle;
@@ -29,7 +29,7 @@ namespace Scene2d.CommandBuilders
             // check if line matches the RecognizeRegex
             Match match = RecognizeRegex.Match(line);
 
-            if (match.Groups.Count == 5)
+            if (match.Groups.Count == 6)
             {
                 _name = match.Groups[1].Value;
 
