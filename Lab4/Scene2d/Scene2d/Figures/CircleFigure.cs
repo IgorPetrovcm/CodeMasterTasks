@@ -15,7 +15,12 @@ namespace Scene2d.Figures
 
         public SceneRectangle CalculateCircumscribingRectangle()
         {
-            throw new System.NotImplementedException();
+            SceneRectangle sceneRectangle = new SceneRectangle();
+
+            sceneRectangle.Vertex1 = new ScenePoint(_center.X - _radius, _center.Y - _radius);
+            sceneRectangle.Vertex2 = new ScenePoint(_center.X + _radius, _center.Y + _radius);
+
+            return sceneRectangle;
         }
 
         public object Clone()

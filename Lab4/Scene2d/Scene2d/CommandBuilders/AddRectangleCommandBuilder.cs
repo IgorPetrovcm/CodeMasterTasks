@@ -39,7 +39,9 @@ namespace Scene2d.CommandBuilders
                 );
             }
             else 
+            {
                 throw new BadFormatException();
+            }
         }
 
         public ICommand GetCommand() => new AddFigureCommand(_name, _rectangle);

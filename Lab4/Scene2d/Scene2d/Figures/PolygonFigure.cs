@@ -14,6 +14,7 @@ namespace Scene2d.Figures
 
         public SceneRectangle CalculateCircumscribingRectangle()
         {
+            double minX = _points.Min(p => p.X)
             throw new System.NotImplementedException();
         }
 

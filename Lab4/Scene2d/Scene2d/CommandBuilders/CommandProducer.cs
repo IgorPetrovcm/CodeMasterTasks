@@ -12,7 +12,7 @@ namespace Scene2d.CommandBuilders
             new Dictionary<Regex, Func<ICommandBuilder>>
             {
                 { new Regex("^add rectangle .*"), () => new AddRectangleCommandBuilder() },
-                //{ new Regex("^add circle .*"), () => }
+                { new Regex("^add circle .*"), () => new AddCircleCommandBuilder() }
                 /* declare more builders here */
             };
 
