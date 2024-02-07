@@ -24,9 +24,9 @@ namespace Scene2d
 
             bool readCommandsFromFile = args.Length > 0;
 
-            IEnumerable<string> commands = readCommandsFromFile ?
+            IEnumerable<string> commands = ReadCommandsFromFile("../../../TestInputs/smile.txt");/*readCommandsFromFile ?
                 ReadCommandsFromFile(args[0]) :
-                ReadCommandsFromUserInput();
+                ReadCommandsFromUserInput();*/
 
             bool drawSceneOnEveryCommand = !readCommandsFromFile;
 

@@ -14,8 +14,18 @@ namespace Scene2d.Figures
 
         public SceneRectangle CalculateCircumscribingRectangle()
         {
-            double minX = _points.Min(p => p.X)
-            throw new System.NotImplementedException();
+            double minX = _points.Min(p => p.X);
+            double maxX = _points.Max(p => p.X);
+
+            double minY = _points.Min(p => p.Y);
+            double maxY = _points.Max(p => p.Y);
+
+            SceneRectangle sceneRectangle = new SceneRectangle();
+
+            sceneRectangle.Vertex1 = new ScenePoint(minX, maxY);
+            sceneRectangle.Vertex2 = new ScenePoint(maxX, minY);
+
+            return sceneRectangle;
         }
 
         public object Clone()

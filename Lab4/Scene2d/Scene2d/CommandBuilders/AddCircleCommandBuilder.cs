@@ -15,7 +15,10 @@ namespace Scene2d.CommandBuilders
 
         public bool IsCommandReady 
         {
-            get { return true; }
+            get 
+            { 
+                return true;
+            }
         }
 
         public void AppendLine(string line)
