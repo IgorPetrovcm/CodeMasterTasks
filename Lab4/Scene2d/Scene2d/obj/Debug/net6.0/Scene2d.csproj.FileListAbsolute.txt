@@ -1,5 +1,4 @@
 C:\Users\Honor\Desktop\Programming\CodeMasterTasks\Lab4\Scene2d\Scene2d\bin\Debug\net6.0\Scene2d.exe
-C:\Users\Honor\Desktop\Programming\CodeMasterTasks\Lab4\Scene2d\Scene2d\bin\Debug\net6.0\TestInputs\smile.txt
 C:\Users\Honor\Desktop\Programming\CodeMasterTasks\Lab4\Scene2d\Scene2d\bin\Debug\net6.0\Scene2d.deps.json
 C:\Users\Honor\Desktop\Programming\CodeMasterTasks\Lab4\Scene2d\Scene2d\bin\Debug\net6.0\Scene2d.runtimeconfig.json
 C:\Users\Honor\Desktop\Programming\CodeMasterTasks\Lab4\Scene2d\Scene2d\bin\Debug\net6.0\Scene2d.dll

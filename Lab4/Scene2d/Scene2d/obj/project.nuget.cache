@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "E0KQa0apkqgWbE3anBJ+OR8I8yNJ9JdissqsHOw3zhwZUun03dN8jUo5IoFkrt13SEJdea67aEx2SnBR5nK6DA==",
+  "dgSpecHash": "kYBdgnieU/pHDEpkIvZIYU97GEKZ9Lps8eCoASAre3JgWEcOAU/9V3jmB2xeD71yyKWF3ZtKIXQrq6Wnhu/Bqw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
+  "projectFilePath": "c:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\igorp\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
-    "C:\\Users\\igorp\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
-    "C:\\Users\\igorp\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512",
-    "C:\\Users\\igorp\\.nuget\\packages\\system.drawing.common\\5.0.3\\system.drawing.common.5.0.3.nupkg.sha512"
+    "C:\\Users\\Honor\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Honor\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\Honor\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512",
+    "C:\\Users\\Honor\\.nuget\\packages\\system.drawing.common\\5.0.3\\system.drawing.common.5.0.3.nupkg.sha512"
   ],
   "logs": []
 }

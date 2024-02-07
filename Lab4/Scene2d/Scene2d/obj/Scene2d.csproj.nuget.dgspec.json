@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj": {}
+    "c:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj": {}
   },
   "projects": {
-    "c:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj": {
+    "c:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
+        "projectUniqueName": "c:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
         "projectName": "Scene2d",
-        "projectPath": "c:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
-        "packagesPath": "C:\\Users\\igorp\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\obj\\",
+        "projectPath": "c:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
+        "packagesPath": "C:\\Users\\Honor\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\igorp\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Honor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
