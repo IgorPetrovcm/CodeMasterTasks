@@ -48,9 +48,6 @@ namespace Scene2d.CommandBuilders
             }
         }
 
-        public ICommand GetCommand()
-        {
-            throw new System.NotImplementedException();
-        }
+        public ICommand GetCommand() => new AddFigureCommand(_name, _polygon);
     }
 }
