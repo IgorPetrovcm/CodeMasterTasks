@@ -8,7 +8,7 @@ namespace Scene2d.CommandBuilders
 
     public class AddPoligonCommandBuilder : ICommandBuilder
     {
-        private static readonly Regex RecognizeRegex = new Regex(@"^(?:add polygon ([a-zA-Z0-9\-_]+)|add point \((-?\d+),\s?(-?\d+)\)|end polygon)");
+        private static readonly Regex RecognizeRegex = new Regex(@"^(?:\s*?(add polygon) ([a-zA-Z0-9\-_]+)|\s*?(add point) \((-?\d+),\s?(-?\d+)\)|\s*?(end polygon))");
 
         private bool _isStarted = false; 
 
@@ -30,17 +30,20 @@ namespace Scene2d.CommandBuilders
         {
             Match match = RecognizeRegex.Match(line);
 
-            if (line.StartsWith("add polygon"))
+            if (match.Groups[1].Value == "add polygon")
             {
-                _name = match.Groups[1].Value;
+                _name = match.Groups[2].Value;
 
                 _isStarted = true;
             }
-            else if (line.StartsWith("add point"))
+            else if (match.Groups[3].Value == "add point")
             {
-                _points.Add(new ScenePoint(double.Parse(match.Groups[2].Value), double.Parse(match.Groups[3].Value)));
+                _points.Add(new ScenePoint(
+                                double.Parse(match.Groups[4].Value), double.Parse(match.Groups[5].Value)
+                            )
+                        );
             }
-            else if (line.StartsWith("end polygon"))
+            else if (match.Groups[6].Value == "end polygon")
             {
                 _isStarted = false;
 

@@ -7,7 +7,7 @@ namespace Scene2d.CommandBuilders
 
     public class AddCircleCommandBuilder : ICommandBuilder
     {
-        private static readonly Regex RecognizeRegex = new Regex(@"add circle ([a-zA-Z0-9\-_]+) \((-?\d+),\s?(-?\d+)\) radius (-?\d+)");
+        private static readonly Regex RecognizeRegex = new Regex(@"\s*?add circle ([a-zA-Z0-9\-_]+) \((-?\d+),\s?(-?\d+)\) radius (-?\d+)");
 
         private IFigure _circle;
 
