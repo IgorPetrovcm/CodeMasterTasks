@@ -44,7 +44,8 @@ namespace Scene2d.Figures
 
         public void Move(ScenePoint vector)
         {
-            throw new System.NotImplementedException();
+            _center.X += vector.X;
+            _center.Y += vector.Y;
         }
 
         public void Reflect(ReflectOrientation orientation)

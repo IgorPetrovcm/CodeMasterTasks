@@ -2,7 +2,7 @@
   "profiles": {
     "Scene2d": {
       "commandName": "Project",
-      "commandLineArgs": "C:/Users/Honor/Desktop/Programming/CodeMasterTasks/Lab4/Scene2d/Scene2d/TestInputs/smile.txt"
+      
     }
   }
 }

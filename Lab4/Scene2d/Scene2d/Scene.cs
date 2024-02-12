@@ -67,7 +67,11 @@ namespace Scene2d
 
         public void Move(string name, ScenePoint vector)
         {
-            /* Should move figure or group 'name' by 'vector' */
+            IFigure figure = _figures.First(x => x.Key == name).Value;
+
+            figure.Move(vector);
+
+            _figures[name] = figure;
         }
 
         public void RotateScene(double angle)

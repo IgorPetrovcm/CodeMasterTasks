@@ -52,9 +52,17 @@ namespace Scene2d.Figures
 
         public void Move(ScenePoint vector)
         {
-            /* Should move all the points of current rectangle */
+            _p1.X += vector.X;
+            _p1.Y += vector.Y;
 
-            throw new NotImplementedException();
+            _p2.X += vector.X;
+            _p2.Y += vector.Y;
+
+            _p3.X += vector.X;
+            _p3.Y += vector.Y;
+
+            _p4.X += vector.X;
+            _p4.Y += vector.Y;
         }
 
         public void Rotate(double angle)

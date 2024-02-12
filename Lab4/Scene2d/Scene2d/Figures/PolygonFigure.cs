@@ -56,7 +56,11 @@ namespace Scene2d.Figures
 
         public void Move(ScenePoint vector)
         {
-            throw new System.NotImplementedException();
+            for (int i = 0; i < _points.Length; i++)
+            {
+                _points[i].X += vector.X;
+                _points[i].Y += vector.Y;
+            }
         }
 
         public void Reflect(ReflectOrientation orientation)
