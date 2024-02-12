@@ -7,7 +7,7 @@ namespace Scene2d.CommandBuilders
 
     public class AddRectangleCommandBuilder : ICommandBuilder
     {
-        private static readonly Regex RecognizeRegex = new Regex(@"\s*?add rectangle ([a-zA-Z0-9\-_]+) \((-?\d+),\s?(-?\d+)\) \((-?\d+),\s?(-?\d+)\)");
+        private static readonly Regex RecognizeRegex = new Regex(@"add rectangle ([a-zA-Z0-9\-_]+) \((-?\d+),\s?(-?\d+)\) \((-?\d+),\s?(-?\d+)\)");
 
         /* Should be set in AppendLine method */
         private IFigure _rectangle;

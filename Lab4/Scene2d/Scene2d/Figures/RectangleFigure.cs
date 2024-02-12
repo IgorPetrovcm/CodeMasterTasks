@@ -67,9 +67,34 @@ namespace Scene2d.Figures
 
         public void Rotate(double angle)
         {
-            /* Should rotate current rectangle. Rotation origin point is the rectangle center.*/
+            ScenePoint center = new ScenePoint();
 
-            throw new NotImplementedException();
+            center.X = (_p1.X + _p2.X + _p3.X + _p4.X) / 4;
+
+            center.Y = (_p1.Y + _p2.Y + _p3.Y + _p4.Y) / 4;
+
+            double alpha = angle * (Math.PI / 180); 
+
+            double x = _p1.X;
+
+            _p1.X = (x - center.X) * Math.Cos(alpha) - (_p1.Y - center.Y) * Math.Sin(alpha) + center.X;
+            _p1.Y = (x - center.X) * Math.Sin(alpha) + (_p1.Y - center.Y) * Math.Cos(alpha) + center.Y;
+
+            x = _p2.X;
+
+            _p2.X = (x - center.X) * Math.Cos(alpha) - (_p2.Y - center.Y) * Math.Sin(alpha) + center.X;
+            _p2.Y = (x - center.X) * Math.Sin(alpha) + (_p2.Y - center.Y) * Math.Cos(alpha) + center.Y;
+
+            x = _p3.X;
+
+            _p3.X = (x - center.X) * Math.Cos(alpha) - (_p3.Y - center.Y) * Math.Sin(alpha) + center.X;
+            _p3.Y = (x - center.X) * Math.Sin(alpha) + (_p3.Y - center.Y) * Math.Cos(alpha) + center.Y;
+
+            x = _p4.X;
+
+            _p4.X = (x - center.X) * Math.Cos(alpha) - (_p4.Y - center.Y) * Math.Sin(alpha) + center.X;
+            _p4.Y = (x - center.X) * Math.Sin(alpha) + (_p4.Y - center.Y) * Math.Cos(alpha) + center.Y;
+
         }
 
         public void Reflect(ReflectOrientation orientation)

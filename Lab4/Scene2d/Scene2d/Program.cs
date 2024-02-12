@@ -28,8 +28,6 @@ namespace Scene2d
                 ReadCommandsFromFile(args[0]) :
                 ReadCommandsFromUserInput();
 
-            bool drawSceneOnEveryCommand = !readCommandsFromFile;
-
             foreach (string commandLine in commands)
             {
                 try
@@ -43,7 +41,7 @@ namespace Scene2d
 
                         Console.WriteLine(command.FriendlyResultMessage);
 
-                        if (drawSceneOnEveryCommand)
+                        if (!readCommandsFromFile)
                         {
                             DrawScene(scene);
                         }
@@ -57,7 +55,7 @@ namespace Scene2d
                 /* todo: more exceptions handling here */
             }
 
-            if (!drawSceneOnEveryCommand)
+            if (readCommandsFromFile)
             {
                 DrawScene(scene);
             }

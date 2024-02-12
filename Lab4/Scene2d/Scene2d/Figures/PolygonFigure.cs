@@ -1,5 +1,6 @@
 namespace Scene2d.Figures
 {
+    using System;
     using System.Drawing;
     using System.Linq;
 
@@ -65,12 +66,29 @@ namespace Scene2d.Figures
 
         public void Reflect(ReflectOrientation orientation)
         {
-            throw new System.NotImplementedException();
+
         }
 
         public void Rotate(double angle)
         {
-            throw new System.NotImplementedException();
+            ScenePoint center = new ScenePoint();
+
+            for (int i = 0; i < _points.Length; i++)
+            {
+                center.X += _points[i].X;
+                center.Y += _points[i].Y;
+            }
+
+            center.X /= 4;
+            center.Y /= 4;
+
+             double alpha = (angle * Math.PI) / 180; 
+
+            for (int i = 0; i < _points.Length; i++)
+            {
+                _points[i].X = (_points[i].X - center.X) * Math.Cos(alpha) - (_points[i].Y - center.Y) * Math.Sin(alpha) + center.X;
+                _points[i].Y = (_points[i].X - center.X) * Math.Sin(alpha) + (_points[i].Y - center.Y) * Math.Cos(alpha) + center.Y;
+            }
         }
     }
 }

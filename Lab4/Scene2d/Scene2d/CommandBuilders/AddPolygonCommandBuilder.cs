@@ -49,6 +49,10 @@ namespace Scene2d.CommandBuilders
 
                 _polygon = new PolygonFigure(_points.ToArray());
             }
+            else 
+            {
+                throw new BadFormatException();
+            }
         }
 
         public ICommand GetCommand() => new AddFigureCommand(_name, _polygon);

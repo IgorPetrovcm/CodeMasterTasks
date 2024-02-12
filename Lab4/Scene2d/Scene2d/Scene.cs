@@ -81,7 +81,11 @@ namespace Scene2d
 
         public void Rotate(string name, double angle)
         {
-            /* Should rotate figure or group 'name' by 'angle' */
+            IFigure figure = _figures.First(x => x.Key == name).Value;
+
+            figure.Rotate(angle);
+
+            _figures[name] = figure;
         }
 
         public IEnumerable<IFigure> ListDrawableFigures()

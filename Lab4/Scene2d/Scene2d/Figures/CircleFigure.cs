@@ -55,7 +55,7 @@ namespace Scene2d.Figures
 
         public void Rotate(double angle)
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

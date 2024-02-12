@@ -14,7 +14,8 @@ namespace Scene2d.CommandBuilders
                 { new Regex("^add rectangle .*"), () => new AddRectangleCommandBuilder() },
                 { new Regex("^add circle .*"), () => new AddCircleCommandBuilder() },
                 { new Regex("^add polygon .*"), () => new AddPoligonCommandBuilder() },
-                { new Regex("^move .*"), () => new MoveRectangleCommandBuilder() }
+                { new Regex("^move .*"), () => new MoveCommandBuilder() },
+                { new Regex("^rotate .*"), () => new RotateCommandBuilder() }
                 /* declare more builders here */
             };
 
