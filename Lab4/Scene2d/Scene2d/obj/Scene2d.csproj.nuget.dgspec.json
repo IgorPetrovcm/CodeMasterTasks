@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj": {}
+    "C:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj": {}
   },
   "projects": {
-    "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj": {
+    "C:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
+        "projectUniqueName": "C:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
         "projectName": "Scene2d",
-        "projectPath": "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
-        "packagesPath": "C:\\Users\\igorp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\obj\\",
+        "projectPath": "C:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
+        "packagesPath": "C:\\Users\\Honor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\igorp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Honor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,11 +40,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "StyleCop.Analyzers": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.1.118, )"
-            },
             "System.Drawing.Common": {
               "target": "Package",
               "version": "[5.0.3, )"

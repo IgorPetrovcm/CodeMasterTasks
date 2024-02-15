@@ -33,9 +33,6 @@
           }
         }
       },
-      "StyleCop.Analyzers/1.1.118": {
-        "type": "package"
-      },
       "System.Drawing.Common/5.0.3": {
         "type": "package",
         "dependencies": {
@@ -111,31 +108,6 @@
         "version.txt"
       ]
     },
-    "StyleCop.Analyzers/1.1.118": {
-      "sha512": "Onx6ovGSqXSK07n/0eM3ZusiNdB6cIlJdabQhWGgJp3Vooy9AaLS/tigeybOJAobqbtggTamoWndz72JscZBvw==",
-      "type": "package",
-      "path": "stylecop.analyzers/1.1.118",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "THIRD-PARTY-NOTICES.txt",
-        "analyzers/dotnet/cs/StyleCop.Analyzers.CodeFixes.dll",
-        "analyzers/dotnet/cs/StyleCop.Analyzers.dll",
-        "analyzers/dotnet/cs/de-DE/StyleCop.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/en-GB/StyleCop.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/es-MX/StyleCop.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/fr-FR/StyleCop.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/pl-PL/StyleCop.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/pt-BR/StyleCop.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/ru-RU/StyleCop.Analyzers.resources.dll",
-        "stylecop.analyzers.1.1.118.nupkg.sha512",
-        "stylecop.analyzers.nuspec",
-        "tools/install.ps1",
-        "tools/uninstall.ps1"
-      ]
-    },
     "System.Drawing.Common/5.0.3": {
       "sha512": "rEQZuslijqdsO0pkJn7LtGBaMc//YVA8de0meGihkg9oLPaN+w+/Pb5d71lgp0YjPoKgBKNMvdq0IPnoW4PEng==",
       "type": "package",
@@ -181,24 +153,23 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "StyleCop.Analyzers >= 1.1.118",
       "System.Drawing.Common >= 5.0.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\igorp\\.nuget\\packages\\": {}
+    "C:\\Users\\Honor\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
+      "projectUniqueName": "C:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
       "projectName": "Scene2d",
-      "projectPath": "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
-      "packagesPath": "C:\\Users\\igorp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\obj\\",
+      "projectPath": "C:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\Scene2d.csproj",
+      "packagesPath": "C:\\Users\\Honor\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab4\\Scene2d\\Scene2d\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\igorp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Honor\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -224,11 +195,6 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "StyleCop.Analyzers": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[1.1.118, )"
-          },
           "System.Drawing.Common": {
             "target": "Package",
             "version": "[5.0.3, )"

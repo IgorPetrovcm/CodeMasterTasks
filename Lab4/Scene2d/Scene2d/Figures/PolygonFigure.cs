@@ -82,12 +82,14 @@ namespace Scene2d.Figures
             center.X /= 4;
             center.Y /= 4;
 
-             double alpha = (angle * Math.PI) / 180; 
+             double alpha = angle * (Math.PI / 180); 
 
             for (int i = 0; i < _points.Length; i++)
             {
-                _points[i].X = (_points[i].X - center.X) * Math.Cos(alpha) - (_points[i].Y - center.Y) * Math.Sin(alpha) + center.X;
-                _points[i].Y = (_points[i].X - center.X) * Math.Sin(alpha) + (_points[i].Y - center.Y) * Math.Cos(alpha) + center.Y;
+                double x = _points[i].X;
+
+                _points[i].X = (x - center.X) * Math.Cos(alpha) - (_points[i].Y - center.Y) * Math.Sin(alpha) + center.X;
+                _points[i].Y = (x - center.X) * Math.Sin(alpha) + (_points[i].Y - center.Y) * Math.Cos(alpha) + center.Y;
             }
         }
     }

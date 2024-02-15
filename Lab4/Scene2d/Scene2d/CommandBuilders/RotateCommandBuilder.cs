@@ -6,7 +6,7 @@ using Scene2d.Exceptions;
 
 public class RotateCommandBuilder : ICommandBuilder
 {
-    private static readonly Regex RecognizeRegex = new Regex(@"^rotate \s*?([a-zA-Z0-9\-_]+) (\d+)");
+    private static readonly Regex RecognizeRegex = new Regex(@"rotate \s*?([a-zA-Z0-9\-_]+) (\d+)");
 
     private double _angle;
 
