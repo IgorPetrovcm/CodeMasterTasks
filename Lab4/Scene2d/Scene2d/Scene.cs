@@ -129,7 +129,11 @@ namespace Scene2d
 
         public void Reflect(string name, ReflectOrientation reflectOrientation)
         {
-            /* Should reflect figure or group 'name' */
+            IFigure figure = _figures.First(x => x.Key == name).Value;
+
+            figure.Reflect(reflectOrientation);
+
+            _figures[name] = figure;
         }
     }
 }

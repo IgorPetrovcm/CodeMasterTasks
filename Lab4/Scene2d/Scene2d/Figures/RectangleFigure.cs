@@ -99,9 +99,7 @@ namespace Scene2d.Figures
 
         public void Reflect(ReflectOrientation orientation)
         {
-            /* Should reflect the figure. Reflection edge is the rectangle axis of symmetry (horizontal or vertical). */
 
-            throw new NotImplementedException();
         }
 
         public void Draw(ScenePoint origin, Graphics drawing)

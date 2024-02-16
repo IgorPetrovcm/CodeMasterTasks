@@ -50,7 +50,7 @@ namespace Scene2d.Figures
 
         public void Reflect(ReflectOrientation orientation)
         {
-            throw new System.NotImplementedException();
+
         }
 
         public void Rotate(double angle)

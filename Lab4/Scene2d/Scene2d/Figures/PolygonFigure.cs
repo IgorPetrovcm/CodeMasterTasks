@@ -66,7 +66,31 @@ namespace Scene2d.Figures
 
         public void Reflect(ReflectOrientation orientation)
         {
+            ScenePoint center = new ScenePoint();
 
+            for (int i = 0; i < _points.Length; i++)
+            {
+                center.X += _points[i].X;
+                center.Y += _points[i].Y;
+            }
+
+            center.X /= 4;
+            center.Y /= 4;
+
+            if (orientation == ReflectOrientation.Horizontal)
+            {
+                for (int i = 0; i < _points.Length; i++)
+                {
+                    _points[i].X = center.X * 2 - _points[i].X;
+                }
+            }
+            else 
+            {
+                for (int i = 0; i < _points.Length; i++)
+                {
+                    _points[i].Y = center.Y * 2 - _points[i].Y;
+                }
+            }
         }
 
         public void Rotate(double angle)
