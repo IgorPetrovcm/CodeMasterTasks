@@ -143,7 +143,7 @@ namespace CashpointProject.Tests
 
 		[Test]
 		[Timeout(20000)]
-		//[Ignore("Результат решения зависит от мощности машины")]
+		[Ignore("Результат решения зависит от мощности машины")]
 		public void CanGrant_PerformanceTest()
 		{
 			Cashpoint cashpoint = new Cashpoint();
@@ -162,6 +162,65 @@ namespace CashpointProject.Tests
 
 			Assert.That(cashpoint.CanGrant(3350));
 			Assert.That(cashpoint.CanGrant(3980), Is.False);
+		}
+
+		[Test]
+		public void AddBanknote_SingleBanknote_ShouldReturnOneCount()
+		{
+			Cashpoint cashpoint = new Cashpoint();
+
+			cashpoint.AddBanknote(1);
+
+			Assert.That(
+				cashpoint.Count,
+				Is.EqualTo(1),
+				"Добавлена одна купюра, но количество купюр в банкомате не равно единице");
+
+			cashpoint.AddBanknote(2);
+			cashpoint.RemoveBanknote(1);
+
+			Assert.That(
+				cashpoint.Count,
+				Is.EqualTo(1),
+				"Добавлено две купюры и удалена одна, банкомат возвращает некоректное количество купюр");
+		}
+
+		[Test]
+		public void Count_NoBanknotes_ShoultZeroValue()
+		{
+			Cashpoint cashpoint = new Cashpoint();
+
+			Assert.That(
+				cashpoint.Count,
+				Is.EqualTo(0),
+				"В банкомат не добавлено ни одной купюры, но он возвращает не нулевое значение");
+		}
+
+		[Test]
+		public void AddBanknote_MultuplyIdenticalBanknotes_ShouldIncrementTotal()
+		{
+			Cashpoint cashpoint = new Cashpoint();
+
+			cashpoint.AddBanknote(5, 500);
+
+			Assert.That(
+				cashpoint.Total,
+				Is.EqualTo(2500),
+				"Добавление пяти одинаковых купюр не произведено");
+		}
+
+		[Test]
+		public void RemoveBanknote_MultiplyIdenticalBanknotes_ShouldReturnTotalEmpty()
+		{
+			Cashpoint cashpoint = new Cashpoint();
+
+			cashpoint.AddBanknote(5, 500);
+			cashpoint.RemoveBanknote(5, 500);
+
+			Assert.That(
+				cashpoint.Total,
+				Is.EqualTo(0),
+				"Удаление всех купюр не произведено");
 		}
 	}
 }

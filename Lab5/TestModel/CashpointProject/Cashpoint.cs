@@ -9,26 +9,60 @@ public sealed class Cashpoint
 
 	private bool[] granted = { true };
 
+	private uint count;
+
+	public uint Count { get { return count; } }
+
     public uint Total { get { return total; }}
 
-    public void AddBanknote(uint value)
+
+    public bool AddBanknote(uint value)
     {
         banknotes.Add(value);
 
         total += value;
 
+		count++;
+
 		SetGrant(value);
+
+		return true;
     }
 
-    public void RemoveBanknote(uint value)
+	public bool AddBanknote(uint countAddedBanknotes, uint value)
+	{
+		for (int i = 0; i < countAddedBanknotes; i++)
+		{
+			AddBanknote(value);
+		}
+
+		return true;
+	}
+
+    public bool RemoveBanknote(uint value)
     {
-        if (banknotes.Remove(value))
-        {
-            total -= value;
+		if (banknotes.Remove(value))
+		{
+			total -= value;
+
+			count--;
 
 			CalculateGrants();
-        }
+		}
+		else
+			return false;
+
+		return true;
     }
+	public bool RemoveBanknote(uint countRemovedBanknotes,uint value)
+	{
+		for (int i = 0; i < countRemovedBanknotes; i++)
+		{
+			if (!RemoveBanknote(value))
+				return false;
+		}
+		return true;
+	}
 
 	public bool CanGrant(uint value)
 	{
