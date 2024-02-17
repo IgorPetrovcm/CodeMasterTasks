@@ -7,6 +7,8 @@ public sealed class Cashpoint
 
     private uint total;
 
+	private bool[] granted = { true };
+
     public uint Total { get { return total; }}
 
     public void AddBanknote(uint value)
@@ -23,4 +25,33 @@ public sealed class Cashpoint
             total -= value;
         }
     }
+
+	public bool CanGrant(uint value)
+	{
+		CalculateGrants();
+
+		if (value > total)
+		{
+			return false;
+		}
+
+		return granted[(int)value];
+	}
+
+	private void CalculateGrants()
+	{
+		granted = new bool[total + 1];
+		granted[0] = true;
+
+		foreach (uint b in banknotes)
+		{
+			for (int i = (int)total; i >= 0; i--)
+			{
+				if (granted[i])
+				{
+					granted[i + b] = true;
+				}
+			}
+		}
+	}
 }
