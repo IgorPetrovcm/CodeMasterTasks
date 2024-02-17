@@ -16,6 +16,8 @@ public sealed class Cashpoint
         banknotes.Add(value);
 
         total += value;
+
+		SetGrant(value);
     }
 
     public void RemoveBanknote(uint value)
@@ -23,13 +25,13 @@ public sealed class Cashpoint
         if (banknotes.Remove(value))
         {
             total -= value;
+
+			CalculateGrants();
         }
     }
 
 	public bool CanGrant(uint value)
 	{
-		CalculateGrants();
-
 		if (value > total)
 		{
 			return false;
@@ -51,6 +53,19 @@ public sealed class Cashpoint
 				{
 					granted[i + b] = true;
 				}
+			}
+		}
+	}
+
+	private void SetGrant(uint banknote)
+	{
+		Array.Resize(ref granted,(int)total + 1);
+
+		for (int i = (int)total; i >= 0; i--)
+		{
+			if (granted[i])
+			{
+				granted[i + banknote] = true;
 			}
 		}
 	}

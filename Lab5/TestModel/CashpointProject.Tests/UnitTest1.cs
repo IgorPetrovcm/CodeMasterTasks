@@ -143,7 +143,7 @@ namespace CashpointProject.Tests
 
 		[Test]
 		[Timeout(20000)]
-		[Ignore("Результат решения зависит от мощности машины")]
+		//[Ignore("Результат решения зависит от мощности машины")]
 		public void CanGrant_PerformanceTest()
 		{
 			Cashpoint cashpoint = new Cashpoint();
