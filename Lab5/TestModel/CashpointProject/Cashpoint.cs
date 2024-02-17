@@ -1,106 +1,113 @@
-namespace CashpointProject.Models;
-
-
-public sealed class Cashpoint
+namespace CashpointProject.Models
 {
-    private readonly List<uint> banknotes = new List<uint>();
-
-    private uint total;
-
-	private bool[] granted = { true };
-
-	private uint count;
-
-	public uint Count { get { return count; } }
-
-    public uint Total { get { return total; }}
-
-
-    public bool AddBanknote(uint value)
-    {
-        banknotes.Add(value);
-
-        total += value;
-
-		count++;
-
-		SetGrant(value);
-
-		return true;
-    }
-
-	public bool AddBanknote(uint countAddedBanknotes, uint value)
+	public sealed class Cashpoint
 	{
-		for (int i = 0; i < countAddedBanknotes; i++)
-		{
-			AddBanknote(value);
-		}
+	    private readonly Dictionary <uint, byte> banknotes = new Dictionary <uint, byte>();
 
-		return true;
-	}
+		private uint total;
 
-    public bool RemoveBanknote(uint value)
-    {
-		if (banknotes.Remove(value))
-		{
-			total -= value;
+		private List<uint> granted = new List<uint>();
 
-			count--;
+		private uint count;
 
-			CalculateGrants();
-		}
-		else
-			return false;
+		public uint Count { get { return count; } }
 
-		return true;
-    }
-	public bool RemoveBanknote(uint countRemovedBanknotes,uint value)
-	{
-		for (int i = 0; i < countRemovedBanknotes; i++)
-		{
-			if (!RemoveBanknote(value))
-				return false;
-		}
-		return true;
-	}
+	    public uint Total { get { return total; }}
 
-	public bool CanGrant(uint value)
-	{
-		if (value > total)
-		{
-			return false;
-		}
 
-		return granted[(int)value];
-	}
-
-	private void CalculateGrants()
-	{
-		granted = new bool[total + 1];
-		granted[0] = true;
-
-		foreach (uint b in banknotes)
-		{
-			for (int i = (int)total; i >= 0; i--)
+	    public bool AddBanknote(uint value)
+	    {
+	        if (!banknotes.ContainsKey(value))
 			{
-				if (granted[i])
+				banknotes.Add(value, 1);
+			}
+			else
+			{
+				banknotes[value]++;
+			}
+
+	        total += value;
+
+			count++;
+
+			return true;
+	    }
+
+		public bool AddBanknote(uint countAddedBanknotes, uint value)
+		{
+			for (int i = 0; i < countAddedBanknotes; i++)
+			{
+				AddBanknote(value);
+			}
+
+			return true;
+		}
+
+	    public bool RemoveBanknote(uint value)
+	    {
+			if (!banknotes.ContainsKey(value))
+			{
+				return false;
+			}
+			else
+			{
+				banknotes[value]--;
+
+				total -= value;
+
+				count--;
+			}
+
+			return true;
+	    }
+		public bool RemoveBanknote(uint countRemovedBanknotes,uint value)
+		{
+			for (int i = 0; i < countRemovedBanknotes; i++)
+			{
+				if (!RemoveBanknote(value))
+					return false;
+			}
+
+			return true;
+		}
+
+		public bool CanGrant(uint value)
+		{
+			if (value > total)
+			{
+				return false;
+			}
+
+			if (granted.Count != count)
+			{
+				granted = new List<uint>();
+
+				Dictionary<uint, byte> sortedBanknotes = banknotes.OrderByDescending(x => x.Key).ToDictionary();
+
+				foreach (uint key in sortedBanknotes.Keys)
 				{
-					granted[i + b] = true;
+					for (byte i = 0; i < sortedBanknotes[key]; i++)
+					{
+						granted.Add(key);
+					}
 				}
 			}
-		}
-	}
 
-	private void SetGrant(uint banknote)
-	{
-		Array.Resize(ref granted,(int)total + 1);
-
-		for (int i = (int)total; i >= 0; i--)
-		{
-			if (granted[i])
+			for (int i = 0; i <  granted.Count; i++)
 			{
-				granted[i + banknote] = true;
+				if (granted[i] <= value)
+				{
+					value -= granted[i];
+
+					if (value == 0)
+						return true;
+				}
 			}
+
+			if (value == 0)
+				return true;
+
+			return false;
 		}
 	}
 }

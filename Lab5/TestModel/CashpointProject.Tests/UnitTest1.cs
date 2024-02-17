@@ -143,21 +143,21 @@ namespace CashpointProject.Tests
 
 		[Test]
 		[Timeout(20000)]
-		[Ignore("Результат решения зависит от мощности машины")]
+		//[Ignore("Результат решения зависит от мощности машины")]
 		public void CanGrant_PerformanceTest()
 		{
 			Cashpoint cashpoint = new Cashpoint();
 
 			for (int i = 0; i < 2; i++)
 			{
-				cashpoint.AddBanknote(10);
-				cashpoint.AddBanknote(50);
+				cashpoint.AddBanknote(2000);
 				cashpoint.AddBanknote(100);
 				cashpoint.AddBanknote(200);
+				cashpoint.AddBanknote(50);
 				cashpoint.AddBanknote(500);
-				cashpoint.AddBanknote(1000);
-				cashpoint.AddBanknote(2000);
 				cashpoint.AddBanknote(5000);
+				cashpoint.AddBanknote(10);
+				cashpoint.AddBanknote(1000);
 			}
 
 			Assert.That(cashpoint.CanGrant(3350));
