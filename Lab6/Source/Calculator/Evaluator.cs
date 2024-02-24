@@ -22,6 +22,11 @@ namespace Calculator
             // соответственно для распарсивания строки и вычисления выражения
             //
             // Обратите внимание на юнит-тесты для этого класса
+
+            Operation operation = _parser.Parse(inputString);
+
+            _calculatorEngine.PerformOperation(operation);
+
             return null;
         }
     }

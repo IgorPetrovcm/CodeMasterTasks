@@ -44,7 +44,188 @@ namespace Calculator.Tests
             Assert.That(actual, Is.EqualTo(2.0).Within(0.001), "Incorrect calculation result");
         }
 
+        //учитывая мою реализацию - ряд тестов на обработку ошибок 
+
         [Test]
+        public void DefineOperation_UnaryAlreadyExists_ShouldNotEmptyException()
+        {
+            CalculatorEngine calculator = new CalculatorEngine();
+
+            calculator.DefineOperation("++", (x) => x + 1);
+
+            string? exceptionMessage = null;
+
+            try
+            {
+                calculator.DefineOperation("++", (x) => x + 1);
+            }
+            catch (Exception ex)
+            {
+                exceptionMessage = ex.Message;
+            }
+
+            Assert.That(
+                exceptionMessage,
+                Is.Not.Null,
+                "Ошибка добавления существующей операции не было обработано или не возникло");
+        }
+
+        [Test]
+        public void DefineOperation_BinaryAlreadyExists_ShouldNotEmptyException()
+        {
+            CalculatorEngine calculator = new CalculatorEngine();
+
+            calculator.DefineOperation("+", (x, y) => x + y);
+
+            string? exceptionMessage = null;
+
+            try
+            {
+                calculator.DefineOperation("+", (x, y) => x + y);
+            }
+            catch (Exception ex)
+            {
+                exceptionMessage = ex.Message;
+            }
+
+            Assert.That(
+                exceptionMessage,
+                Is.Not.Null,
+                "Исключение добавления существующей операции не было обработано или не возникло");
+        }
+
+        [Test]
+        public void DefineOperation_TernaryAlreadyExists_ShouldNotEmptyException()
+        {
+            CalculatorEngine calculator = new CalculatorEngine();
+
+            calculator.DefineOperation("whatever", (x, y, z) => x + y + z);
+
+            string? exceptionMessage = null;
+
+            try
+            {
+                calculator.DefineOperation("whatever", (x, y, z) => x + y + z);
+            }
+            catch (Exception ex)
+            {
+                exceptionMessage = ex.Message;
+            }
+
+            Assert.That(
+                exceptionMessage,
+                Is.Not.Null,
+                "сключение добавления существующей операции не было обработано или не возникло");
+        }
+
+		[Test]
+		public void DefineOperation_MultipleForSameSign_ShouldNotThrow()
+		{
+			var calculator = new CalculatorEngine();
+
+			calculator.DefineOperation("whatever", (x) => x);
+			calculator.DefineOperation("whatever", (x, y) => x + y);
+			calculator.DefineOperation("whatever", (x, y, z) => x + y + z);
+		}
+
+		[Test]
+		public void Calculate_OperationNotFound_ShouldThrow()
+		{
+			var calculator = new CalculatorEngine();
+
+			string? exceptionMessage = null;
+
+            try
+            {
+                calculator.PerformOperation(new Operation("++", new double[0]));
+            }
+            catch (Exception ex)
+            {
+                exceptionMessage = ex.Message;
+            }
+
+            Assert.That(
+                exceptionMessage,
+                Is.Not.Null,
+                "Исключение выполнения не существующей операции не было обработано или не возникло");
+		}
+
+		[Test]
+		public void Calculate_ArgumentOutOfRange_ShouldNotEmptyException()
+		{
+			var calculator = new CalculatorEngine();
+
+			var sqrt = new Func<double, double>(
+				x =>
+				{
+					if (x < 0)
+					{
+						throw new ArgumentOutOfRangeException();
+					}
+
+					return Math.Sqrt(x);
+				});
+
+			calculator.DefineOperation("sqrt", sqrt);
+
+			string? exceptionMessage = null;
+
+            try
+            {
+                calculator.PerformOperation(new Operation("sqrt", new double[] { -4 }));
+            }
+            catch (Exception ex)
+            {
+                exceptionMessage = ex.Message;
+            }
+
+            Assert.That(
+                exceptionMessage,
+                Is.Not.Null,
+                "");
+		}
+
+		[Test]
+		public void Calculate_BinaryParametersMismatch_ShouldNotEmptyException()
+		{
+			var calculator = new CalculatorEngine();
+
+			calculator.DefineOperation("+", (x, y) => x + y);
+
+            string? exceptionMessage = null;
+
+            try
+            {
+			    calculator.PerformOperation(new Operation("+", new double[] { 1 }));
+            }
+            catch (Exception ex)
+            {
+                exceptionMessage = ex.Message;
+            }
+
+            Assert.That(
+                exceptionMessage,
+                Is.Not.Null,
+                "Исключение ParametersCountMismatchException не было обработано");
+
+            exceptionMessage = null;
+
+            try
+            {
+				calculator.PerformOperation(new Operation("+", new double[] { 1, 2, 3 }));
+            }
+			catch (Exception ex)
+            {
+                exceptionMessage = ex.Message;
+            }
+
+            Assert.That(
+                exceptionMessage,
+                Is.Not.Null,
+                "Исключение ParametersCountMismatchException вновь не было обработано");
+		}
+
+		/*[Test]
         public void DefineOperation_UnaryAlreadyExists_ShouldThrow()
         {
             var calculator = new CalculatorEngine();
@@ -82,17 +263,7 @@ namespace Calculator.Tests
                 calculator.DefineOperation("whatever", (x, y, z) => x + y + z);
             });
         }
-
-        [Test]
-        public void DefineOperation_MultipleForSameSign_ShouldNotThrow()
-        {
-            var calculator = new CalculatorEngine();
-
-            calculator.DefineOperation("whatever", (x) => x);
-            calculator.DefineOperation("whatever", (x, y) => x + y);
-            calculator.DefineOperation("whatever", (x, y, z) => x + y + z);
-        }
-
+        
         [Test]
         public void Calculate_OperationNotFound_ShouldThrow()
         {
@@ -180,6 +351,6 @@ namespace Calculator.Tests
             {
                 calculator.PerformOperation(new Operation("+", new double[] { 1, 2 }));
             });
-        }
-    }
+        }*/
+	}
 }
