@@ -36,7 +36,7 @@ public class CalculatorEngineEventArgs
 		}
 		else if (threeValueEvent != null)
 		{
-			return threeValueEvent.Invoke(values[0], values[1], values[3]);
+			return threeValueEvent.Invoke(values[0], values[1], values[2]);
 		}
 		throw new Exception();
 	}
