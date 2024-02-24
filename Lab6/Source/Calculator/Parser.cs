@@ -1,13 +1,13 @@
 namespace Calculator
 {
-    using System;
-    using System.Globalization;
-    using System.Linq;
-
+	using System.Collections.Generic;
+	using System.Text.RegularExpressions;
     using Calculator.Exceptions;
 
     public class Parser : IParser
     {
+        private readonly static Regex RecognizeRegex = new Regex(@"^([a-zA-Z0-9\+\-\*\/]+)\s+?([1-9]+)(?:\s+?([1-9]+))?(?:\s+?([1-9]+))?");
+
         public Operation Parse(string inputString)
         {
             // todo: реализуйте метод Parse().
@@ -21,7 +21,39 @@ namespace Calculator
             // соответствующее исключение из папки Exceptions
             //
             // Обратите внимание на юнит-тесты для этого класса
-            return null;
+
+            string? operationName;
+
+            List<double> operationValues = new List<double>();
+
+            inputString = inputString.Trim();
+
+            Match match = RecognizeRegex.Match(inputString);
+
+            operationName = match.Groups[1].Value;
+
+            double currentValue;
+
+			if (!double.TryParse(match.Groups[2].Value, out currentValue))
+            {
+                throw new IncorrectParametersException("");
+            }
+
+            operationValues.Add(currentValue);
+
+            for (int i = 3; i < match.Groups.Count && match.Groups[i].Value != ""; i++)
+            {
+                if (!double.TryParse(match.Groups[i].Value, out currentValue))
+                {
+                    throw new IncorrectParametersException("");
+                }
+
+                operationValues.Add(currentValue);
+            }
+
+            Operation operation = new Operation(operationName, operationValues.ToArray());
+
+            return operation;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Calculator
         {
             ICalculatorEngine calculator = new CalculatorEngine();
             IParser parser = new Parser();
-
+            /*
             try
             {
                 // пример определяемых операций
@@ -65,7 +65,9 @@ namespace Calculator
                 // todo: кажется здесь мы "отловили" только одно
                 // исключение NotFoundOperationException,
                 // не забудьте отловить оставшиеся
-            }
+            }*/
+
+            Operation operation = parser.Parse("- 5   3 ");
         }
     }
 }
