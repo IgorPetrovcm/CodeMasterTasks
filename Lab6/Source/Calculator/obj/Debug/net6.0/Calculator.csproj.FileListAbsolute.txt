@@ -20,3 +20,10 @@ C:\Users\igorp\Programming\CodeMasterTasks\Lab6\Source\Calculator\obj\Debug\net6
 C:\Users\igorp\Programming\CodeMasterTasks\Lab6\Source\Calculator\obj\Debug\net6.0\Calculator.dll
 C:\Users\igorp\Programming\CodeMasterTasks\Lab6\Source\Calculator\obj\Debug\net6.0\refint\Calculator.dll
 C:\Users\igorp\Programming\CodeMasterTasks\Lab6\Source\Calculator\obj\Debug\net6.0\Calculator.pdb
+C:\Users\igorp\Programming\CodeMasterTasks\Lab6\Source\Calculator\bin\Debug\net6.0\Calculator.exe
+C:\Users\igorp\Programming\CodeMasterTasks\Lab6\Source\Calculator\bin\Debug\net6.0\Calculator.deps.json
+C:\Users\igorp\Programming\CodeMasterTasks\Lab6\Source\Calculator\bin\Debug\net6.0\Calculator.runtimeconfig.json
+C:\Users\igorp\Programming\CodeMasterTasks\Lab6\Source\Calculator\bin\Debug\net6.0\Calculator.dll
+C:\Users\igorp\Programming\CodeMasterTasks\Lab6\Source\Calculator\bin\Debug\net6.0\Calculator.pdb
+C:\Users\igorp\Programming\CodeMasterTasks\Lab6\Source\Calculator\obj\Debug\net6.0\Calculator.genruntimeconfig.cache
+C:\Users\igorp\Programming\CodeMasterTasks\Lab6\Source\Calculator\obj\Debug\net6.0\ref\Calculator.dll

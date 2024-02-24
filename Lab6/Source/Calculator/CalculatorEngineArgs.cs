@@ -30,18 +30,39 @@ namespace Calculator
 		{
 			if (values.Length == 1)
 			{
-				return oneValueEvent.Invoke(values[0]);
+				try
+				{
+					return oneValueEvent.Invoke(values[0]);
+				}
+				catch (Exception ex)
+				{
+					throw ex;
+				}
 			}
 			else if (values.Length == 3)
 			{
-				return threeValueEvent.Invoke(values[0], values[1], values[2]);
+				try
+				{
+					return threeValueEvent.Invoke(values[0], values[1], values[2]);
+				}
+				catch (Exception ex)
+				{
+					throw ex;
+				}
 			}
 			else if (values.Length == 2)
 			{
-				return twoValueEvent.Invoke(values[0], values[1]);
+				try
+				{
+					return twoValueEvent.Invoke(values[0], values[1]);
+				}
+				catch (Exception ex)
+				{
+					throw ex;
+				}
 			}
-
-			throw new ParametersCountMismatchException("Incorrect count of parameters");
+			
+			throw new ParametersCountMismatchException("");
 		}
 
 		public Type[] GetTypesExistsFuncs()

@@ -3,14 +3,20 @@ namespace Calculator
     using System;
     using System.Collections.Generic;
 	using System.Linq;
+	using System.Reflection.Metadata.Ecma335;
 	using Calculator.Exceptions;
 
     public class CalculatorEngine : ICalculatorEngine
     {
-        private Dictionary<string, CalculatorEngineArgs>? operations;
+        private Dictionary<string, CalculatorEngineArgs> operations = new Dictionary<string, CalculatorEngineArgs>();
 
         public double PerformOperation(Operation operation)
         {
+			if (!operations.ContainsKey(operation.Sign))
+			{
+				throw new NotFoundOperationException("Not found an operation with this name");
+			}
+
 			double answer = 0.0;
 
 			try
@@ -20,7 +26,7 @@ namespace Calculator
 			}
 			catch (Exception ex)
 			{
-                Console.WriteLine(ex.Message);
+				throw ex; 
             }
 
             return answer;
