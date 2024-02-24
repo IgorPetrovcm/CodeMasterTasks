@@ -6,5 +6,9 @@ namespace Calculator.Exceptions
     {
         // Выбрасываем это исключение когда в методе ICalculatorEngine.PerformOperation вызывается
         // операция с неверным числом параметров.
+
+        public ParametersCountMismatchException(string message) : base (message) 
+        {
+        }
     }
 }

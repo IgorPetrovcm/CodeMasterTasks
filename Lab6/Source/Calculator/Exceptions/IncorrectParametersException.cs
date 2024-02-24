@@ -6,5 +6,9 @@ namespace Calculator.Exceptions
     {
         // Выбрасываем это исключение когда метод IParser.Parse не находит
         // ни одного аргумента во входной строке.
+
+        public IncorrectParametersException(string message) : base (message) 
+        { 
+        }
     }
 }

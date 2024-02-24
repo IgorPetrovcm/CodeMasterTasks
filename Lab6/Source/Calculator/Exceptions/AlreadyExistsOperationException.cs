@@ -6,5 +6,9 @@ namespace Calculator.Exceptions
     {
         // Выбрасываем это исключение когда в методе ICalculatorEngine.DefineOperations регистрируется
         // существующая операция с тем же количеством параметров.
+
+        public AlreadyExistsOperationException(string message) : base (message) 
+        { 
+        }
     }
 }

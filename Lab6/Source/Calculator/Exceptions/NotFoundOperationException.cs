@@ -6,5 +6,9 @@ namespace Calculator.Exceptions
     {
         // Выбрасываем это исключение когда в методе ICalculatorEngine.PerformOperation вызывается
         // несуществующая операция.
+
+        public NotFoundOperationException(string message) : base (message) 
+        { 
+        }
     }
 }

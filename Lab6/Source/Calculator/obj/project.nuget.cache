@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "345XUKO7eTi2DdS6hYHU+52Zfcy75YLb/pNIO8FO1Jbzwm/mERxOSYN7L+kIkW1r084ze/ADrM2PKV3MBOYlOw==",
+  "dgSpecHash": "9G2nzqPTfI4Dn2HL1/TA3YTOSE3ha7gr/rJDt/O0z7hYsN51bV9ok/Vjjt8wcvRRq42/Dgz55UhfJWPul5kQtg==",
   "success": true,
   "projectFilePath": "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab6\\Source\\Calculator\\Calculator.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\igorp\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512",
     "C:\\Users\\igorp\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
     "C:\\Users\\igorp\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
     "C:\\Users\\igorp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
