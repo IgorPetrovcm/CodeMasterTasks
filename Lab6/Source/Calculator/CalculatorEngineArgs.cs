@@ -5,84 +5,53 @@ namespace Calculator
 {
 	public class CalculatorEngineArgs
 	{
-		public Func<double, double> oneValueEvent;
+		private Func<double, double>? _oneValueEvent;
 		
-		public Func<double, double, double> twoValueEvent;
+		private Func<double, double, double>? _twoValueEvent;
 		
-		public Func<double, double, double, double> threeValueEvent;
+		private Func<double, double, double, double>? _threeValueEvent;
 		
 		public void SetFunc(Func<double, double> func)
 		{
-			oneValueEvent = func;
+			_oneValueEvent = func;
 		}
 
 		public void SetFunc(Func<double, double, double> func)
 		{
-			twoValueEvent = func;
+			_twoValueEvent = func;
 		}
 
 		public void SetFunc(Func<double, double, double, double> func)
 		{
-			threeValueEvent = func;
+			_threeValueEvent = func;
 		}
 		
 		public double Run(double[] values)
 		{
 			if (values.Length == 1)
 			{
-				try
-				{
-					return oneValueEvent.Invoke(values[0]);
-				}
-				catch (Exception ex)
-				{
-					throw ex;
-				}
+				return _oneValueEvent.Invoke(values[0]);
 			}
 			else if (values.Length == 3)
 			{
-				try
-				{
-					return threeValueEvent.Invoke(values[0], values[1], values[2]);
-				}
-				catch (Exception ex)
-				{
-					throw ex;
-				}
+				return _threeValueEvent.Invoke(values[0], values[1], values[2]);
 			}
 			else if (values.Length == 2)
 			{
-				try
-				{
-					return twoValueEvent.Invoke(values[0], values[1]);
-				}
-				catch (Exception ex)
-				{
-					throw ex;
-				}
+				return _twoValueEvent.Invoke(values[0], values[1]);
 			}
 			
 			throw new ParametersCountMismatchException("");
 		}
 
-		public Type[] GetTypesExistsFuncs()
+		public bool[] GetExistsFuncs()
 		{
-			Type[] typeStrings = new Type[3]; 
-
-			if (oneValueEvent != null)
+			return new bool[]
 			{
-				typeStrings[0] = oneValueEvent.GetType();
-			}
-			if (twoValueEvent != null)
-			{
-				typeStrings[1] = twoValueEvent.GetType();
-			}
-			if (threeValueEvent != null)
-			{
-				typeStrings[2] = threeValueEvent.GetType();
-			}
-
-			return typeStrings;
+				_oneValueEvent != null,
+				_twoValueEvent != null,
+				_threeValueEvent != null
+			};
 		}
 	}
 }

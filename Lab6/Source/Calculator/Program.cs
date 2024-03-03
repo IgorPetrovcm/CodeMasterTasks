@@ -10,7 +10,7 @@ namespace Calculator
         {
             ICalculatorEngine calculator = new CalculatorEngine();
             IParser parser = new Parser();
-            /*
+            
             try
             {
                 // пример определяемых операций
@@ -57,15 +57,24 @@ namespace Calculator
                 {
                     Console.WriteLine(evaluator.Calculate(line));
                 }
-                catch (NotFoundOperationException)
+                catch (NotFoundOperationException ex)
                 {
+                    Console.WriteLine(ex);
                     // todo сообщение об ошибке
+                }
+                catch (IncorrectParametersException ex)
+                {
+                    Console.WriteLine(ex);
+                }
+                catch (ParametersCountMismatchException ex)
+                {
+                    Console.WriteLine(ex);
                 }
 
                 // todo: кажется здесь мы "отловили" только одно
                 // исключение NotFoundOperationException,
                 // не забудьте отловить оставшиеся
-            }*/
+            }
 
             Operation operation = parser.Parse("- 5   3 ");
         }

@@ -6,7 +6,7 @@ namespace Calculator
 
     public class Parser : IParser
     {
-        private readonly static Regex RecognizeRegex = new Regex(@"^([a-zA-Z0-9\+\-\*\/]+)\s+?([1-9]+)(?:\s+?([1-9]+))?(?:\s+?([1-9]+))?");
+        private readonly static Regex RecognizeRegex = new Regex(@"^([a-zA-Z0-9\+\-\*\/]+)\s+?([0-9]+)(?:\s+?([0-9]+))?(?:\s+?([0-9]+))?");
 
         public Operation Parse(string inputString)
         {
@@ -36,7 +36,7 @@ namespace Calculator
 
 			if (!double.TryParse(match.Groups[2].Value, out currentValue))
             {
-                throw new IncorrectParametersException("");
+                throw new IncorrectParametersException("The parameters were entered incorrectly");
             }
 
             operationValues.Add(currentValue);
@@ -45,7 +45,7 @@ namespace Calculator
             {
                 if (!double.TryParse(match.Groups[i].Value, out currentValue))
                 {
-                    throw new IncorrectParametersException("");
+                    throw new IncorrectParametersException("The parameters were entered incorrectly");
                 }
 
                 operationValues.Add(currentValue);

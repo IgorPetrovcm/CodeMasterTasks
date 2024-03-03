@@ -36,7 +36,7 @@ namespace Calculator
         {
             if (operations.ContainsKey(sign))
             {
-                if (operations[sign].GetTypesExistsFuncs()[2] == body.GetType()) { 
+                if (operations[sign].GetExistsFuncs()[2]) { 
                     throw new AlreadyExistsOperationException("This operation already exists");
                 }
 
@@ -56,7 +56,7 @@ namespace Calculator
         {
 			if (operations.ContainsKey(sign))
 			{
-				if (operations[sign].GetTypesExistsFuncs()[1] == body.GetType())
+				if (operations[sign].GetExistsFuncs()[1])
 				{
 					throw new AlreadyExistsOperationException("This operation already exists");
 				}
@@ -77,7 +77,7 @@ namespace Calculator
         {
 			if (operations.ContainsKey(sign))
 			{
-				if (operations[sign].GetTypesExistsFuncs()[0] == body.GetType())
+				if (operations[sign].GetExistsFuncs()[0])
 				{
 					throw new AlreadyExistsOperationException("This operation already exists");
 				}

@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "9G2nzqPTfI4Dn2HL1/TA3YTOSE3ha7gr/rJDt/O0z7hYsN51bV9ok/Vjjt8wcvRRq42/Dgz55UhfJWPul5kQtg==",
+  "dgSpecHash": "iAhWcW1H/8iPTJ0fWdBANthGkeN42zmgd842+IfA7svCGDvSFJSFZLsT0sbRc7iM5p1xQubhKQPop2U8WQJEbA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\igorp\\Programming\\CodeMasterTasks\\Lab6\\Source\\Calculator\\Calculator.csproj",
+  "projectFilePath": "C:\\Users\\Honor\\Desktop\\Programming\\CodeMasterTasks\\Lab6\\Source\\Calculator\\Calculator.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\igorp\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\igorp\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\igorp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\igorp\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.26\\microsoft.netcore.app.host.win-x64.6.0.26.nupkg.sha512"
+    "C:\\Users\\Honor\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\Honor\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\Honor\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\Honor\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.27\\microsoft.netcore.app.host.win-x64.6.0.27.nupkg.sha512"
   ],
   "logs": []
 }

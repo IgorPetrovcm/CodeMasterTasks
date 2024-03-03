@@ -25,9 +25,9 @@ namespace Calculator
 
             Operation operation = _parser.Parse(inputString);
 
-            _calculatorEngine.PerformOperation(operation);
+            double answer = _calculatorEngine.PerformOperation(operation);
 
-            return null;
+            return answer.ToString();
         }
     }
 }
