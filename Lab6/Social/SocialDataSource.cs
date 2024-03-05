@@ -28,39 +28,49 @@ namespace Social
             userContext.User = _users.Find(x => x.Name == userName);
 
             userContext.Friends = _friends
-                .Where(x => x.FromUserId == userContext.User.UserId)
+                .Where(x => (x.FromUserId == userContext.User.UserId || x.ToUserId == userContext.User.UserId) && x.Status == 2)
                 .Join(_users, 
-                    f => f.FromUserId,
+                    f => { 
+                        if (f.FromUserId == userContext.User.UserId) 
+                            return f.ToUserId; 
+                        else 
+                            return f.FromUserId;
+                    },
                     u => u.UserId,
                     (f, u) => new UserInformation { UserId = u.UserId, Name = u.Name, Online = u.Online })
                 .ToList();
 
-            userContext.Friends.AddRange(
-                _friends
-                .Where(x => x.ToUserId == userContext.User.UserId)
-                .Join(_users, 
-                    f => f.ToUserId,
-                    u => u.UserId,
-                    (f, u) => new UserInformation { UserId = u.UserId, Name = u.Name, Online = u.Online })
-                .ToList());
 
             userContext.OnlineFriends = userContext.Friends.Where(x => x.Online).ToList();
 
             userContext.FriendshipOffers = _friends
-                .Where(x => x.FromUserId == userContext.User.UserId && x.Status != 2 && x.Status != 3 && x.SendDate > userContext.User.LastVisit)
+                .Where(x => (x.FromUserId == userContext.User.UserId || x.ToUserId == userContext.User.UserId) && x.Status != 2 && x.Status != 3 && x.SendDate > userContext.User.LastVisit)
                 .Join(_users,
-                    f => f.FromUserId,
+                    f => {
+                        if (f.FromUserId == userContext.User.UserId)
+                            return f.ToUserId;
+                        else
+                            return f.FromUserId;
+                    },
                     u => u.UserId,
                     (f, u) => new UserInformation { UserId = u.UserId, Name = u.Name, Online = u.Online})
                 .ToList();
 
-            userContext.FriendshipOffers.AddRange(_friends
-                .Where(x => x.ToUserId == userContext.User.UserId && x.Status != 2 && x.Status != 3 && x.SendDate > userContext.User.LastVisit)
+            userContext.Subscribers = _friends
+                .Where(x => x.ToUserId == userContext.User.UserId && x.Status != 2)
                 .Join(_users,
                     f => f.ToUserId,
                     u => u.UserId,
                     (f, u) => new UserInformation { UserId = u.UserId, Name = u.Name, Online = u.Online})
-                .ToList());
+                .ToList();
+
+            userContext.News = _messages
+                .Where(x => userContext.Friends.Any(f => f.UserId == x.AuthorId) && x.SendDate > userContext.User.LastVisit)
+                .Join(_users,
+                    m => m.AuthorId,
+                    u => u.UserId,
+                    (f, u) => new News { AuthorId = f.AuthorId, AuthorName = u.Name, Likes = f.Likes, Text = f.Text} )
+                .ToList();
 
             // userContext.User = ...
             // userContext.Friends = GetUserFriends(userContext.User);
@@ -91,6 +101,8 @@ namespace Social
             using FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
 
             _messages = JsonSerializer.Deserialize<List<Message>>(fs);
+
+            fs.Dispose();
         }
     }
 }

@@ -42,5 +42,12 @@
     "MessageId": 4,
     "SendDate": "2019-03-18T00:00:00",
     "Text": "I went to sleep..."
+  },
+  {
+    "AuthorId": 5,
+    "Likes": [],
+    "MessageId": 3,
+    "SendDate": "2019-03-23T00:00:00",
+    "Text": "Have a good day guys!"
   }
 ]
