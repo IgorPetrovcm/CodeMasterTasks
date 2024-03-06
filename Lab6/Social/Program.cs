@@ -14,18 +14,16 @@ namespace Social
 
         private static void Main(string[] args)
         {
+            string name;
+
             if (args.Length == 0)
             {
-                Console.WriteLine("Имя пользователя не задано!");
-                return;
+                System.Console.WriteLine("Input user name please: ");
+                name = Console.ReadLine();
             }
-
-            var name = args[0];
-
-            if (string.IsNullOrEmpty(name))
+            else 
             {
-                // TODO
-                return;
+                name = args[0];
             }
 
             SocialDataSource social = new SocialDataSource(PathUsers, PathFriends, PathMessages);
@@ -49,12 +47,6 @@ namespace Social
             {
                 System.Console.WriteLine("\t" + news.AuthorName + "\n\tLikes: " + news.Likes.Count + "\n\t" + news.Text + "\n");
             }
-
-            /*var socialDataSource = new SocialDataSource(PathUsers, PathFriends, PathMessages);
-
-            var userContext = socialDataSource.GetUserContext(name);*/
-
-            // todo: вывод в консоль
         }
 
         public static void GoInfo(Func<UserContext, List<UserInformation>> func, UserContext context, string title)
