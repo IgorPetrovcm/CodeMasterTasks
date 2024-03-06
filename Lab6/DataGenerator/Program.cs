@@ -51,7 +51,7 @@ public class Program
                 Friend friend = new Friend()
                 {
                     FromUserId = rnd.Next(1,106),
-                    SendDate = startDate.AddDays(rnd.Next(366)),
+                    SendDate = DateTime.Now.AddDays(rnd.Next(150)),
                     Status = rnd.Next(0,3),
                     ToUserId = rnd.Next(1, 106)
                 };

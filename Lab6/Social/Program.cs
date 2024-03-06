@@ -2,6 +2,7 @@ namespace Social
 {
     using System;
     using System.Collections.Generic;
+    using System.Data;
     using Social.Models;
 
     internal class Program
@@ -45,7 +46,24 @@ namespace Social
 
             foreach (News news in userContext.News)
             {
-                System.Console.WriteLine("\t" + news.AuthorName + "\n\tLikes: " + news.Likes.Count + "\n\t" + news.Text + "\n");
+                Console.Write("\t" + news.AuthorName);
+
+                Console.ForegroundColor = ConsoleColor.Green;
+
+                Console.Write("\n\t" + news.Text);
+
+                Console.ResetColor();
+
+                Console.Write("\n\tLikes:");
+
+                foreach (int id in news.Likes)
+                {
+                    User user = social.GetUserById(id);
+
+                    Console.Write("\n\t" + user.Name);
+                }
+
+                System.Console.WriteLine("\n");
             }
         }
 
