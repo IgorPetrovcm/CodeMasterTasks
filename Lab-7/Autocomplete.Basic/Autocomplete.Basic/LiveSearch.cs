@@ -29,6 +29,7 @@ namespace Autocomplete.Basic
                     stageResult = BestSimilarInArray(StageNames, example);
                 });
 
+            // Не совсем понимаю, зачем после каждого BestSimilarInArray проверять токен, ведь он нигде не изменяется
             /*if (cancellationToken.IsCancellationRequested)
             {
                 return null;
@@ -62,14 +63,7 @@ namespace Autocomplete.Basic
 
             while (wordResultThread.ThreadState != ThreadState.Stopped)
             {}
-
-            while (movieResultThread.ThreadState != ThreadState.Stopped)
-            {}
-
-            while (stageResultThread.ThreadState != ThreadState.Stopped)
-            {}
             
-
             if (wordResult.SimilarityScore > movieResult.SimilarityScore &&
                 wordResult.SimilarityScore > stageResult.SimilarityScore)
             {
