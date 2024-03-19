@@ -19,49 +19,40 @@ namespace Autocomplete.Async
                 _token.Cancel();
             }
 
-            CancellationTokenSource newTokenSource = new CancellationTokenSource();
+            _token = new CancellationTokenSource();
+            
+            var stageResult = await BestSimilarInArray(StageNames, example);
+            if (_token.IsCancellationRequested)
+            {
+                return string.Empty;
+            }
 
-            _token = newTokenSource;
+            var movieResult = await BestSimilarInArray(MovieTitles, example);
 
-            var task = Task.Factory.StartNew<string>(
-                (o) =>
+            if (_token.IsCancellationRequested)
+            {
+                return string.Empty;
+            }
+
+            var wordResult = await BestSimilarInArray(SimpleWords, example);
+
+            if (_token.IsCancellationRequested)
+            {
+                return string.Empty;
+            }
+
+            if (wordResult.SimilarityScore > movieResult.SimilarityScore && wordResult.SimilarityScore > stageResult.SimilarityScore)
+            {
+                return wordResult.Line;
+            }
+
+            if (movieResult.IsBetterThan(stageResult))
                 {
-                    var ct = (CancellationTokenSource)o!;
+                return movieResult.Line;
+            }
 
-                    var stageResult = BestSimilarInArray(StageNames, example);
-                    if (ct.IsCancellationRequested)
-                    {
-                        return string.Empty;
-                    }
+            return stageResult.Line;
 
-                    var movieResult = BestSimilarInArray(MovieTitles, example);
-
-                    if (ct.IsCancellationRequested)
-                    {
-                        return string.Empty;
-                    }
-
-                    var wordResult = BestSimilarInArray(SimpleWords, example);
-
-                    if (ct.IsCancellationRequested)
-                    {
-                        return string.Empty;
-                    }
-
-                    if (wordResult.SimilarityScore > movieResult.SimilarityScore && wordResult.SimilarityScore > stageResult.SimilarityScore)
-                    {
-                        return wordResult.Line;
-                    }
-
-                    if (movieResult.IsBetterThan(stageResult))
-                    {
-                        return movieResult.Line;
-                    }
-
-                    return stageResult.Line;
-                }, newTokenSource);
-
-            return await task;
         }
 
         public async void HandleTyping(HintedControl control)
@@ -69,21 +60,28 @@ namespace Autocomplete.Async
             control.Hint = await FindBestSimilarAsync(control.LastWord);
         }
 
-        internal static SimilarLine BestSimilarInArray(string[] lines, string example)
+        internal static async Task<SimilarLine> BestSimilarInArray(string[] lines, string example)
         {
-            var best = new SimilarLine(string.Empty, 0);
-
-            foreach (var line in lines)
-            {
-                var currentLine = new SimilarLine(line, line.Similarity(example));
-
-                if (currentLine.IsBetterThan(best))
+            Task<SimilarLine> task = Task.Factory.StartNew<SimilarLine>(
+                () => 
                 {
-                    best = currentLine;
-                }
-            }
+                    var best = new SimilarLine(string.Empty, 0);
 
-            return best;
+                    foreach (var line in lines)
+                    {
+                        var currentLine = new SimilarLine(line, line.Similarity(example));
+
+                        if (currentLine.IsBetterThan(best))
+                        {
+                            best = currentLine;
+                        }
+                    }
+
+                    return best;
+                }
+            );
+
+            return await task;
         }
     }
 }

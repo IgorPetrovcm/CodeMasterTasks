@@ -3,12 +3,12 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
-	<CodeAnalysisRuleSet>../../common.ruleset</CodeAnalysisRuleSet>
+	<!--<CodeAnalysisRuleSet>../../common.ruleset</CodeAnalysisRuleSet>-->
 	<Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="All" />
+    <!--<PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="All" />-->
     <None Update="Data\movies.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
