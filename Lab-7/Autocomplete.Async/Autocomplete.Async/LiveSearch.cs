@@ -20,26 +20,20 @@ namespace Autocomplete.Async
             }
 
             _token = new CancellationTokenSource();
+
+            Task<SimilarLine> stageTask = BestSimilarInArray(StageNames, example, _token.Token);
             
-            var stageResult = await BestSimilarInArray(StageNames, example);
-            if (_token.IsCancellationRequested)
-            {
-                return string.Empty;
-            }
+            Task<SimilarLine> movieTask = BestSimilarInArray(MovieTitles, example, _token.Token);
 
-            var movieResult = await BestSimilarInArray(MovieTitles, example);
+            Task<SimilarLine> wordTask = BestSimilarInArray(SimpleWords, example, _token.Token);
 
-            if (_token.IsCancellationRequested)
-            {
-                return string.Empty;
-            }
+            await Task.WhenAll(stageTask, movieTask, wordTask);
 
-            var wordResult = await BestSimilarInArray(SimpleWords, example);
+            SimilarLine wordResult = wordTask.Result; 
 
-            if (_token.IsCancellationRequested)
-            {
-                return string.Empty;
-            }
+            SimilarLine stageResult = stageTask.Result;
+
+            SimilarLine movieResult = movieTask.Result;
 
             if (wordResult.SimilarityScore > movieResult.SimilarityScore && wordResult.SimilarityScore > stageResult.SimilarityScore)
             {
@@ -51,8 +45,9 @@ namespace Autocomplete.Async
                 return movieResult.Line;
             }
 
-            return stageResult.Line;
+            _token.Cancel();
 
+            return stageResult.Line;
         }
 
         public async void HandleTyping(HintedControl control)
@@ -60,7 +55,7 @@ namespace Autocomplete.Async
             control.Hint = await FindBestSimilarAsync(control.LastWord);
         }
 
-        internal static Task<SimilarLine> BestSimilarInArray(string[] lines, string example)
+        internal static Task<SimilarLine> BestSimilarInArray(string[] lines, string example, CancellationToken token)
         {
             Task<SimilarLine> task = Task.Factory.StartNew<SimilarLine>(
                 () => 
@@ -69,6 +64,11 @@ namespace Autocomplete.Async
 
                     foreach (var line in lines)
                     {
+                        if (token.IsCancellationRequested)
+                        {
+                            return new SimilarLine(string.Empty, default);
+                        }
+
                         var currentLine = new SimilarLine(line, line.Similarity(example));
 
                         if (currentLine.IsBetterThan(best))
