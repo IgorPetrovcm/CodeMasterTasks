@@ -60,7 +60,7 @@ namespace Autocomplete.Async
             control.Hint = await FindBestSimilarAsync(control.LastWord);
         }
 
-        internal static async Task<SimilarLine> BestSimilarInArray(string[] lines, string example)
+        internal static Task<SimilarLine> BestSimilarInArray(string[] lines, string example)
         {
             Task<SimilarLine> task = Task.Factory.StartNew<SimilarLine>(
                 () => 
@@ -81,7 +81,7 @@ namespace Autocomplete.Async
                 }
             );
 
-            return await task;
+            return task;
         }
     }
 }
