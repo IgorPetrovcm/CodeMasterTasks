@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace GatesController.Core
 {
     public class GatesManager
@@ -31,35 +33,60 @@ namespace GatesController.Core
         // Open Request logic
         public async Task RequestOpen(int gateId)
         {
-            lock(lockObject)
-            {
                 if (gateId < 0 || gateId > 5)
                 {
                     _logger.LogInformation("There is no gate with this id");
                     return;
                 }
 
-                int gatesOpenCount = 0;
-                int gateOpen = 0;
+            int gatesOpenCount = 0;
+            List<int> gatesOpen = new List<int>();
 
+            lock (lockObject)
+            {
                 for (int i = 0; i < _gates.Length; i++)
                 {
                     if (_gates[i] == GateStatus.Open)
                     {
-                        gateOpen = i + 1;
+                        gatesOpen.Add(i + 1);
                         gatesOpenCount++;
                     }
-             }
+                }
+            }
 
                 if (gatesOpenCount == 2)
                 {
-                    _logger.LogInformation("You will not be able to open more gates");
-                    return;
+                    _logger.LogInformation("Waiting for a place to open the gate");
+                    _gates[gateId - 1] = GateStatus.Waiting;
                 }
 
-                if (gateId == gateOpen + 1 || gateId == gateOpen - 1)
+                while (_gates[gateId - 1] == GateStatus.Waiting)
+                {
+                    await Task.Delay(100);
+
+                    lock (lockObject)
+                    {
+                        gatesOpenCount = 0;
+                        for (int i = 0; i < _gates.Length; i++)
+                        {
+                            if (_gates[i] == GateStatus.Open){
+                                gatesOpenCount++;
+                            }   
+                        }
+
+                        if (gatesOpenCount == 2){
+                            continue;
+                        }
+
+                        _gates[gateId - 1] = GateStatus.Open;
+                    }
+                }
+
+                if (gatesOpen.Any(x => x + 1 == gateId) || gatesOpen.Any(x => x - 1 == gateId))
                 {
                     _logger.LogInformation("The neighboring gate cannot be opened");
+                    _gates[gateId - 1] = GateStatus.Closed;
+                    return;
                 }   
             
                 _logger.LogInformation("Received open request for Gate {GateId}", gateId);
@@ -69,7 +96,6 @@ namespace GatesController.Core
                 _gates[gateId - 1] = GateStatus.Open;  // Make sure we set correct status for Dashboard to work
 
                 _logger.LogInformation("Gate {GateId} is open", gateId);
-            }
         }
 
         // Close Request logic
