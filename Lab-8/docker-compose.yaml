@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  postgresql:
+    container_name: codemasters_db
+    image: postgres:16.2-alpine
+    ports:
+      - "5430:5432"
+
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+
+    
+
