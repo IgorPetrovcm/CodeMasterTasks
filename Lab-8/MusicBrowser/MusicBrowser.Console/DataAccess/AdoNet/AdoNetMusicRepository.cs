@@ -2,23 +2,25 @@ namespace MusicBrowser.Console.DataAccess.AdoNet
 {
     using System;
     using System.Collections.Generic;
-    using System.Data.SqlClient;
     using System.Threading.Tasks;
     using MusicBrowser.Console.Domain;
-    using Npgsql;
+    using Microsoft.EntityFrameworkCore;
+    using System.Linq;
 
     public class AdoNetMusicRepository : IMusicRepository
     {
         private readonly string _connectionString;
 
-        public AdoNetMusicRepository(string connectionString)
+        private readonly ApplicationContext _context;
+
+        public AdoNetMusicRepository(ApplicationContext context)
         {
-            _connectionString = connectionString;
+            _context = context;
         }
 
         public async Task<IEnumerable<Album>> ListAlbums()
         {
-            List<Album> result = new List<Album>();
+            /*List<Album> result = new List<Album>();
 
             NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
 
@@ -39,12 +41,14 @@ namespace MusicBrowser.Console.DataAccess.AdoNet
                 }
             }
 
-            return result;
+            return result;*/
+
+            return _context.Albums;
         }
 
         public async Task<Album> Add(Album album)
         {
-            int albumId;
+            /*int albumId;
 
             NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
 
@@ -62,13 +66,18 @@ namespace MusicBrowser.Console.DataAccess.AdoNet
                 Id = albumId,
                 Title = album.Title,
                 Date = album.Date
-            };
+            };*/
+
+            await _context.AddAsync(album);
+            await _context.SaveChangesAsync();
+
+            return await _context.Albums.OrderByDescending(x => x.Id).FirstOrDefaultAsync();
         }
 
 
         public async void Delete(Album album)
         {
-            NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
+            /*NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
 
             NpgsqlConnection connection = await sqlDataSource.OpenConnectionAsync();
 
@@ -76,12 +85,15 @@ namespace MusicBrowser.Console.DataAccess.AdoNet
             {
                 command.Parameters.AddWithValue("album_id", album.Id);
                 command.ExecuteNonQuery();
-            }
+            }*/
+
+            _context.Albums.Remove(album);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Song>> ListSongs(Album album)
         {
-            List<Song> result = new List<Song>();
+            /*List<Song> result = new List<Song>();
 
             NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
 
@@ -107,12 +119,14 @@ namespace MusicBrowser.Console.DataAccess.AdoNet
                 }
             }
 
-            return result;
+            return result;*/
+
+            return _context.Songs;
         }
 
         public async void Delete(Song song)
         {
-            NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
+            /*NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
 
             NpgsqlConnection connection = await sqlDataSource.OpenConnectionAsync();
 
@@ -120,12 +134,15 @@ namespace MusicBrowser.Console.DataAccess.AdoNet
             {
                 command.Parameters.AddWithValue("song_id", song.Id);
                 command.ExecuteNonQuery();
-            }
+            }*/
+
+            _context.Songs.Remove(song);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<Song> Add(Song song)
         {
-            int songId;
+            /*int songId;
 
             NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
 
@@ -145,7 +162,12 @@ namespace MusicBrowser.Console.DataAccess.AdoNet
                 Title = song.Title,
                 Duration = song.Duration,
                 Album = song.Album
-            };
+            };*/
+
+            _context.Songs.Add(song);
+            await _context.SaveChangesAsync();
+
+            return await _context.Songs.OrderByDescending(x => x.Id).FirstOrDefaultAsync();
         }
     }
 }

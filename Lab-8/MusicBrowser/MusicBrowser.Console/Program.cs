@@ -1,14 +1,11 @@
 namespace MusicBrowser.Console
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
     using Microsoft.Extensions.Configuration;
     using MusicBrowser.Console.Application;
     using MusicBrowser.Console.DataAccess;
     using MusicBrowser.Console.DataAccess.AdoNet;
-    using MusicBrowser.Console.Domain;
+    using Microsoft.EntityFrameworkCore;
 
     internal class Program
     {
@@ -20,7 +17,7 @@ namespace MusicBrowser.Console
 
             string connectionString = config.GetConnectionString("DefaultConnectionString");
 
-            IMusicRepository musicRepository = new AdoNetMusicRepository(connectionString);
+            IMusicRepository musicRepository = new AdoNetMusicRepository( new ApplicationContext(connectionString) );
 
             var dataModel = new MusicListModel(musicRepository);
             var list = new ExpandableList(dataModel);
