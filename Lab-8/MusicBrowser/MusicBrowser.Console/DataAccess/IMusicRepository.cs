@@ -14,7 +14,7 @@ namespace MusicBrowser.Console.DataAccess
 
         void Delete(Album album);
 
-        Song Add(Song song);
+        Task<Song> Add(Song song);
 
         Task<Album> Add(Album album);
     }

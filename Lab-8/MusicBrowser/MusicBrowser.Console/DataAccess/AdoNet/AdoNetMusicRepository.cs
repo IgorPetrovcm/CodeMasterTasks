@@ -3,17 +3,11 @@ namespace MusicBrowser.Console.DataAccess.AdoNet
     using System;
     using System.Collections.Generic;
     using System.Data.SqlClient;
+    using System.Threading.Tasks;
     using MusicBrowser.Console.Domain;
+    using Npgsql;
 
-    /*
-    <summary>
-        На этапе первого задания, в связи с изменением СУБД с SSMS на Postgre,
-        вынужден закомментировать этот класс,
-        а также с переходом на асинхронный подход запросов
-    <summary>
-    */
-
-    /*public class AdoNetMusicRepository : IMusicRepository
+    public class AdoNetMusicRepository : IMusicRepository
     {
         private readonly string _connectionString;
 
@@ -22,25 +16,25 @@ namespace MusicBrowser.Console.DataAccess.AdoNet
             _connectionString = connectionString;
         }
 
-        public IEnumerable<Album> ListAlbums()
+        public async Task<IEnumerable<Album>> ListAlbums()
         {
-            var result = new List<Album>();
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                connection.Open();
+            List<Album> result = new List<Album>();
 
-                var command = new SqlCommand("SELECT * FROM [albums]", connection);
-                using (var dataReader = command.ExecuteReader())
+            NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
+
+            NpgsqlConnection connection = await sqlDataSource.OpenConnectionAsync();
+
+            await using (NpgsqlCommand command = new NpgsqlCommand("select title, date, album_id from albums", connection))
+            {
+                await using (NpgsqlDataReader dataReader = await command.ExecuteReaderAsync())
                 {
                     while (dataReader.Read())
                     {
-                        result.Add(
-                            new Album
-                            {
-                                Id = (int)dataReader["albumId"],
-                                Title = (string)dataReader["title"],
-                                Date = (DateTime)dataReader["date"],
-                            });
+                        result.Add( new Album {
+                            Title = dataReader.GetString(0),
+                            Date = dataReader.GetDateTime(1),
+                            Id = dataReader.GetInt32(2)
+                        });
                     }
                 }
             }
@@ -48,63 +42,110 @@ namespace MusicBrowser.Console.DataAccess.AdoNet
             return result;
         }
 
-        public Album Add(Album album)
+        public async Task<Album> Add(Album album)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            int albumId;
+
+            NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
+
+            NpgsqlConnection connection = await sqlDataSource.OpenConnectionAsync();
+
+            await using (NpgsqlCommand command = new NpgsqlCommand("insert into albums (title, date) values (@Title, @Date);" + 
+                                                    "select album_id from albums order by album_id desc limit 1;", connection))
             {
-                connection.Open();
+                command.Parameters.AddWithValue("Title", album.Title);
+                command.Parameters.AddWithValue("Date", album.Date);
+                albumId = Convert.ToInt32(await command.ExecuteScalarAsync());
+            }
 
-                var command = new SqlCommand(
-                    @"
-        INSERT INTO dbo.albums (date, title) VALUES (@Date, @Title)
-        SELECT SCOPE_IDENTITY()", connection);
-                command.Parameters.AddWithValue("@Title", album.Title);
-                command.Parameters.AddWithValue("@Date", album.Date);
+            return new Album {
+                Id = albumId,
+                Title = album.Title,
+                Date = album.Date
+            };
+        }
 
-                var albumId = Convert.ToInt32(command.ExecuteScalar());
 
-                return new Album
+        public async void Delete(Album album)
+        {
+            NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
+
+            NpgsqlConnection connection = await sqlDataSource.OpenConnectionAsync();
+
+            await using (NpgsqlCommand command = new NpgsqlCommand("delete from albums where album_id = @album_id", connection))
+            {
+                command.Parameters.AddWithValue("album_id", album.Id);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public async Task<IEnumerable<Song>> ListSongs(Album album)
+        {
+            List<Song> result = new List<Song>();
+
+            NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
+
+            NpgsqlConnection connection = await sqlDataSource.OpenConnectionAsync();
+
+            await using (NpgsqlCommand command = new NpgsqlCommand("select songs.title, duration, songs.album_id, song_id from songs " +
+                                                                "join albums on albums.album_id = songs.album_id " + 
+                                                                "where albums.album_id = @album_id", connection))
+            {
+                command.Parameters.AddWithValue("album_id", album.Id);
+
+                await using (NpgsqlDataReader dataReader = await command.ExecuteReaderAsync())
                 {
-                    Id = albumId,
-                    Title = album.Title,
-                    Date = album.Date,
-                };
+                    while (dataReader.Read())
+                    {
+                        result.Add( new Song {
+                            Id = dataReader.GetInt32(3),
+                            Album = album,
+                            Title = dataReader.GetString(0),
+                            Duration = dataReader.GetTimeSpan(1)
+                        });
+                    }
+                }
             }
-        }
-
-        public void Delete(Album album)
-        {
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                connection.Open();
-
-                var command = new SqlCommand(
-                    "DELETE FROM [albums] WHERE albumId = @AlbumId",
-                    connection);
-                command.Parameters.AddWithValue("@AlbumId", album.Id);
-                command.ExecuteNonQuery(); // <4>
-            }
-        }
-
-        public IEnumerable<Song> ListSongs(Album album)
-        {
-            var result = new List<Song>();
-
-            //// TODO Implement loading songs by album id.
 
             return result;
         }
 
-        public void Delete(Song song)
+        public async void Delete(Song song)
         {
-            // TODO Delete song by id
+            NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
+
+            NpgsqlConnection connection = await sqlDataSource.OpenConnectionAsync();
+
+            await using (NpgsqlCommand command = new NpgsqlCommand("delete from songs where song_id = @song_id", connection))
+            {
+                command.Parameters.AddWithValue("song_id", song.Id);
+                command.ExecuteNonQuery();
+            }
         }
 
-        public Song Add(Song song)
+        public async Task<Song> Add(Song song)
         {
-            //// TODO Add saving song logic
+            int songId;
 
-            return song;
+            NpgsqlDataSource sqlDataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
+
+            NpgsqlConnection connection = await sqlDataSource.OpenConnectionAsync();
+
+            await using (NpgsqlCommand command = new NpgsqlCommand("insert into songs (title, duration, album_id) values (@Title, @Duration, @Album_id);" + 
+                                                    "select song_id from songs order by song_id desc limit 1;", connection))
+            {
+                command.Parameters.AddWithValue("Title", song.Title);
+                command.Parameters.AddWithValue("Duration", song.Duration);
+                command.Parameters.AddWithValue("Album_id", song.Album.Id);
+                songId = Convert.ToInt32(await command.ExecuteScalarAsync());
+            }
+
+            return new Song {
+                Id = songId,
+                Title = song.Title,
+                Duration = song.Duration,
+                Album = song.Album
+            };
         }
-    }*/
+    }
 }

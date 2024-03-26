@@ -82,7 +82,7 @@ namespace MusicBrowser.Console.Application
             Changed();
         }
 
-        public void AddSong(string songTitle, TimeSpan songDuration,  Album album)
+        public async void AddSong(string songTitle, TimeSpan songDuration,  Album album)
         {
             if (album == null)
             {
@@ -96,7 +96,7 @@ namespace MusicBrowser.Console.Application
                 Title = songTitle,
             };
 
-            _albumSongs[album.Id].Add(_musicRepository.Add(song));
+            _albumSongs[album.Id].Add(await _musicRepository.Add(song));
 
             Changed();
         }

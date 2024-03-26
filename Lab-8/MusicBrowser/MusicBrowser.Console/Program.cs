@@ -20,7 +20,7 @@ namespace MusicBrowser.Console
 
             string connectionString = config.GetConnectionString("DefaultConnectionString");
 
-            IMusicRepository musicRepository = new SingleQueryAdoNetRepository(connectionString);
+            IMusicRepository musicRepository = new AdoNetMusicRepository(connectionString);
 
             var dataModel = new MusicListModel(musicRepository);
             var list = new ExpandableList(dataModel);
