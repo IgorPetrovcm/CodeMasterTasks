@@ -1,13 +1,14 @@
 namespace MusicBrowser.Console.DataAccess
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
     using MusicBrowser.Console.Domain;
 
     public interface IMusicRepository
     {
-        IEnumerable<Album> ListAlbums();
+        Task<IEnumerable<Album>> ListAlbums();
 
-        IEnumerable<Song> ListSongs(Album album);
+        Task<IEnumerable<Song>> ListSongs(Album album);
 
         void Delete(Song song);
 
@@ -15,6 +16,6 @@ namespace MusicBrowser.Console.DataAccess
 
         Song Add(Song song);
 
-        Album Add(Album album);
+        Task<Album> Add(Album album);
     }
 }

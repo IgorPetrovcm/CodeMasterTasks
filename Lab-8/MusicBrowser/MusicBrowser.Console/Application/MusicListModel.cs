@@ -36,9 +36,9 @@ namespace MusicBrowser.Console.Application
             Changed();
         }
 
-        public void ExpandAlbum(Album album)
+        public async void ExpandAlbum(Album album)
         {
-            IList<Song> songs = _musicRepository.ListSongs(album).ToList();
+            IList<Song> songs = (await _musicRepository.ListSongs(album)).ToList();
 
             _albumSongs[album.Id] = songs;
             _albumExpanded[album.Id] = true;
@@ -46,11 +46,11 @@ namespace MusicBrowser.Console.Application
             Changed();
         }
 
-        public void ReadAlbumsList()
+        public async void ReadAlbumsList()
         {
             _albums.Clear();
 
-            foreach (var album in _musicRepository.ListAlbums())
+            foreach (var album in await _musicRepository.ListAlbums())
             {
                 PutAlbumToModel(album);
             }
@@ -101,9 +101,9 @@ namespace MusicBrowser.Console.Application
             Changed();
         }
 
-        public void AddAlbum(string albumTitle, DateTime albumDate)
+        public async void AddAlbum(string albumTitle, DateTime albumDate)
         {
-            Album album = _musicRepository.Add(new Album { Date = albumDate, Title = albumTitle });
+            Album album = await _musicRepository.Add(new Album { Date = albumDate, Title = albumTitle });
 
             PutAlbumToModel(album);
 

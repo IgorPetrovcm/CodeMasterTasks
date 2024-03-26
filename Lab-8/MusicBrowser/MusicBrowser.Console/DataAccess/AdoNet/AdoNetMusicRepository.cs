@@ -5,7 +5,15 @@ namespace MusicBrowser.Console.DataAccess.AdoNet
     using System.Data.SqlClient;
     using MusicBrowser.Console.Domain;
 
-    public class AdoNetMusicRepository : IMusicRepository
+    /*
+    <summary>
+        На этапе первого задания, в связи с изменением СУБД с SSMS на Postgre,
+        вынужден закомментировать этот класс,
+        а также с переходом на асинхронный подход запросов
+    <summary>
+    */
+
+    /*public class AdoNetMusicRepository : IMusicRepository
     {
         private readonly string _connectionString;
 
@@ -98,5 +106,5 @@ namespace MusicBrowser.Console.DataAccess.AdoNet
 
             return song;
         }
-    }
+    }*/
 }
