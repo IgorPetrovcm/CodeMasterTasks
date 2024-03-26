@@ -1,45 +1,71 @@
-use Music
-declare @albumid int
+insert into albums (date, title) values ('1973-03-01', 'The Dark Side of the Moon');
 
-insert into dbo.albums (date, title) values ('1973-03-01', 'The Dark Side of the Moon')
-set @albumid = SCOPE_IDENTITY()
+do 
+$$
+    declare 
+        current_album_id int;
+    begin
+      	select album_id into current_album_id from albums
+          	where title = 'The Dark Side of the Moon';
 
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Speak To Me', '00:01:05')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Breathe', '00:02:43')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'On the Run', '00:03:36')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Time', '00:06:53')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'The Great Gig in the Sky', '00:04:36')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Money', '00:06:23')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Us and Them', '00:07:49')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Any Colour You Like', '00:03:26')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Brain Damage', '00:03:49')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Eclipse', '00:02:03')
+        insert into songs (album_id, title, duration) values (current_album_id, 'Speak To Me', '00:01:05');
+        insert into songs (album_id, title, duration) values (current_album_id, 'On the Run', '00:03:36');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Breathe', '00:02:43');
+	    insert into songs (album_id, title, duration) values (current_album_id, 'Time', '00:06:53');
+        insert into songs (album_id, title, duration) values (current_album_id, 'The Great Gig in the Sky', '00:04:36');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Money', '00:06:23');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Us and Them', '00:07:49');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Any Colour You Like', '00:03:26');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Brain Damage', '00:03:49');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Eclipse', '00:02:03');
+    end
+$$;
 
-insert into dbo.albums (date, title) values ('1967-05-26', 'Sgt. Pepper''s Lonely Hearts Club Band')
-set @albumid = SCOPE_IDENTITY()
 
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Sgt. Pepper''s Lonely Hearts Club Band', '00:02:00')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'With a Little Help from My Friends', '00:02:42')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Lucy in the Sky with Diamonds', '00:03:28')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Getting Better', '00:02:48')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Fixing a Hole', '00:02:36')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'She''s Leaving Home', '00:03:35')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Being for the Benefit of Mr. Kite!', '00:02:37')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Within You Without You', '00:05:05')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'When I''m Sixty-Four', '00:02:37')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Lovely Rita', '00:02:42')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Good Morning Good Morning', '00:02:42')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Sgt. Pepper''s Lonely Hearts Club Band (Reprise)', '00:01:18')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'A Day in the Life', '00:05:38')
+insert into albums (date, title) values ('1967-05-26', 'Sgt. Pepper''s Lonely Hearts Club Band')
 
-insert into dbo.albums (date, title) values ('1971-10-08', 'Led Zeppelin IV')
-set @albumid = SCOPE_IDENTITY()
+do 
+$$
+    declare 
+        current_album_id int;
+    begin
+        select album_id into current_album_id from albums
+            where title = 'Sgt. Pepper''s Lonely Hearts Club Band';
 
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Black Dog', '00:04:54')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Rock and Roll', '00:03:40')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'The Battle of Evermore', '00:05:51')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Stairway to Heaven', '00:08:02')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Misty Mountain Hop', '00:04:38')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Four Sticks', '00:04:44')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'Going to California', '00:03:31')
-insert into dbo.songs (albumId, title, duration) values (@albumid, 'When the Levee Breaks', '00:07:07')
+        insert into songs (album_id, title, duration) values (current_album_id, 'Sgt. Pepper''s Lonely Hearts Club Band', '00:02:00');
+        insert into songs (album_id, title, duration) values (current_album_id, 'With a Little Help from My Friends', '00:02:42');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Lucy in the Sky with Diamonds', '00:03:28');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Getting Better', '00:02:48');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Fixing a Hole', '00:02:36');
+        insert into songs (album_id, title, duration) values (current_album_id, 'She''s Leaving Home', '00:03:35');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Being for the Benefit of Mr. Kite!', '00:02:37');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Within You Without You', '00:05:05');
+        insert into songs (album_id, title, duration) values (current_album_id, 'When I''m Sixty-Four', '00:02:37');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Lovely Rita', '00:02:42');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Good Morning Good Morning', '00:02:42');
+        insert into songs (album_id, title, duration) values (current_album_id, 'Sgt. Pepper''s Lonely Hearts Club Band (Reprise)', '00:01:18');
+        insert into songs (album_id, title, duration) values (current_album_id, 'A Day in the Life', '00:05:38');
+        
+    end
+$$;
+
+insert into albums (date, title) values ('1971-10-08', 'Led Zeppelin IV')
+
+do 
+$$
+    declare 
+        current_album_id int;
+    begin
+        select album_id into current_album_id from albums
+            where title = 'Led Zeppelin IV';
+
+            insert into songs (album_id, title, duration) values (current_album_id, 'Black Dog', '00:04:54');
+            insert into songs (album_id, title, duration) values (current_album_id, 'Rock and Roll', '00:03:40');
+            insert into songs (album_id, title, duration) values (current_album_id, 'The Battle of Evermore', '00:05:51');
+            insert into songs (album_id, title, duration) values (current_album_id, 'Stairway to Heaven', '00:08:02');
+            insert into songs (album_id, title, duration) values (current_album_id, 'Misty Mountain Hop', '00:04:38');
+            insert into songs (album_id, title, duration) values (current_album_id, 'Four Sticks', '00:04:44');
+            insert into songs (album_id, title, duration) values (current_album_id, 'Going to California', '00:03:31');
+            insert into songs (album_id, title, duration) values (current_album_id, 'When the Levee Breaks', '00:07:07');
+    end
+$$;
