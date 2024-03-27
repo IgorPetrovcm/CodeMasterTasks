@@ -21,4 +21,10 @@ public class ApplicationContext : DbContext
     {
         optionsBuilder.UseNpgsql(_connectionString);
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfiguration(new AlbumEntityTypeConfiguration());
+        modelBuilder.ApplyConfiguration(new SongEntityTypeConfiguration());
+    }
 }

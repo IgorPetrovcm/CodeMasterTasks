@@ -10,6 +10,8 @@ namespace MusicBrowser.Console.Domain
 
         public TimeSpan Duration { get; set; }
 
+        public int AlbumId { get; set;}
+
         public Album Album { get; set; }
     }
 }
