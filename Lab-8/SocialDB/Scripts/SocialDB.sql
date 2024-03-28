@@ -35,6 +35,7 @@ CREATE TABLE messages(
 
 DROP TABLE IF EXISTS likes CASCADE;
 CREATE TABLE Likes(
+	like_id SERIAL NOT NULL
 	user_id INT NOT NULL,
 	message_id INT NOT NULL,
 	FOREIGN KEY (user_id) REFERENCES Users (user_id) ON DELETE CASCADE,
