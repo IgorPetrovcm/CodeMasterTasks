@@ -3,7 +3,7 @@ namespace SocialDBViewer.Domain;
 
 public class Message 
 {
-    public int MessageId { get; set; }
+    public int Id { get; set; }
 
     public int AuthorId { get; set; }
 

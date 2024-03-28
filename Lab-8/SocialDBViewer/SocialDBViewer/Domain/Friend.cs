@@ -3,7 +3,7 @@ namespace SocialDBViewer.Domain;
 
 public class Friend 
 {
-    public int FriendId { get; set; }
+    public int Id { get; set; }
 
     public int UserFromId { get; set; }
 

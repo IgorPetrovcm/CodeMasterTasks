@@ -3,7 +3,7 @@ namespace SocialDBViewer.Domain;
 
 public class User
 {
-    public int User_Id { get; set; }
+    public int Id { get; set; }
 
     public bool Gender { get; set; }
 
