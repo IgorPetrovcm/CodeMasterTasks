@@ -176,7 +176,7 @@ public class SocialRepository : ISocialRepository
         await using (NpgsqlConnection connection = await dataSource.OpenConnectionAsync())
         {
             string query = $"insert into likes (user_id, message_id) " +
-                            $"values (@{nameof(Like.UserId)}, @{nameof(Like.MessageId)})";
+                            $"values (@{nameof(Like.UserId)}, @{nameof(Like.MessageId)})"; 
             
             await connection.ExecuteAsync(query, like);
 
@@ -198,7 +198,7 @@ public class SocialRepository : ISocialRepository
 
         await using (NpgsqlConnection connection = await dataSource.OpenConnectionAsync())
         {
-            string query = $"delete from likes where friend_id = @LikeId";
+            string query = $"delete from likes where like_id = @LikeId";
             
             await connection.ExecuteAsync(query, new {LikeId = likeId});
         }

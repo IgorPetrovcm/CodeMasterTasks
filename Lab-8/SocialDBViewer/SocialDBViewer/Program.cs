@@ -30,12 +30,14 @@ public class Program
             System.Console.WriteLine($"{user.Id}, {user.Name}, {user.IsOnline}, {user.DateOfBirth}, {user.Gender}\n");
         }
 
-        await repository.DeleteUser(user1.Id);
+        User userForFriend1 = await repository.AddUser(new User());
+        User userForFriend2 = await repository.AddUser(new User());
+        
 
         Friend friend1 = await repository.AddFriend(
             new Friend{
-                UserFromId = 1,
-                UserToId = 2,
+                UserFromId = userForFriend1.Id,
+                UserToId = userForFriend2.Id,
                 FriendStatus = 1,
                 SendDate = new DateTime(2020, 4, 18)
             });
@@ -46,10 +48,14 @@ public class Program
         }
 
         await repository.DeleteFriend(friend1.Id);
+        await repository.DeleteUser(userForFriend1.Id);
+        await repository.DeleteUser(userForFriend2.Id);
+
+        User userForMessage = await repository.AddUser(new User());
 
         Message message1 = await repository.AddMessage(
             new Message{
-                AuthorId = repository.AddUser(new User()).Id,
+                AuthorId = userForMessage.Id,
                 SendDate = new DateTime(2022, 12, 12),
                 Text = "lorem ipsum"
             });
@@ -60,13 +66,14 @@ public class Program
         }
 
         await repository.DeleteMessage(message1.Id);
-        await repository.DeleteMessage(message1.AuthorId);
+        await repository.DeleteUser(userForMessage.Id);
 
-        Message messaage2 = await repository.AddMessage(new Message());
+        Message message2 = await repository.AddMessage(new Message { AuthorId = user1.Id });
+        User userForLike = await repository.AddUser(new User());
 
         Like like1 = await repository.AddLike(new Like {
-            MessageId = messaage2.Id,
-            UserId = repository.AddUser(new User()).Id
+            MessageId = message2.Id,
+            UserId = userForLike.Id
         });
 
         foreach (Like like in await repository.GetLikes())
@@ -75,7 +82,7 @@ public class Program
         }
 
         await repository.DeleteLike(like1.Id);
-        await repository.DeleteUser(like1.UserId);
-        await repository.DeleteMessage(like1.MessageId);
+        await repository.DeleteUser(userForLike.Id);
+        await repository.DeleteMessage(message2.Id);
     }
 }

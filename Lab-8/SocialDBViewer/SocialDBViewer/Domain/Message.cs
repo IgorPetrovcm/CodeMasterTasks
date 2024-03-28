@@ -9,5 +9,5 @@ public class Message
 
     public DateTime SendDate { get; set; }
 
-    public string? Text { get; set; }
+    public string? Text { get; set; } = "lorem ipsum";
 }
