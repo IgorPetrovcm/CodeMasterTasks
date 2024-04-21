@@ -1,5 +1,0 @@
-C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\obj\Debug\net7.0\ReadyEnvironment.csproj.AssemblyReference.cache
-C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\obj\Debug\net7.0\ReadyEnvironment.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\obj\Debug\net7.0\ReadyEnvironment.AssemblyInfoInputs.cache
-C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\obj\Debug\net7.0\ReadyEnvironment.AssemblyInfo.cs
-C:\Users\Honor\Desktop\study_C#\code\CodeMasterTasks\Lab4\ReadyEnvironment\obj\Debug\net7.0\ReadyEnvironment.csproj.CoreCompileInputs.cache

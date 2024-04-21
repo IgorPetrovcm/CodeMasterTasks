@@ -1,0 +1,14 @@
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\bin\Debug\net7.0\testReadAnsi.exe
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\bin\Debug\net7.0\testReadAnsi.deps.json
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\bin\Debug\net7.0\testReadAnsi.runtimeconfig.json
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\bin\Debug\net7.0\testReadAnsi.dll
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\bin\Debug\net7.0\testReadAnsi.pdb
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\obj\Debug\net7.0\testReadAnsi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\obj\Debug\net7.0\testReadAnsi.AssemblyInfoInputs.cache
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\obj\Debug\net7.0\testReadAnsi.AssemblyInfo.cs
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\obj\Debug\net7.0\testReadAnsi.csproj.CoreCompileInputs.cache
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\obj\Debug\net7.0\testReadAnsi.dll
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\obj\Debug\net7.0\refint\testReadAnsi.dll
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\obj\Debug\net7.0\testReadAnsi.pdb
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\obj\Debug\net7.0\testReadAnsi.genruntimeconfig.cache
+C:\Users\Honor\Desktop\study C#\заметки\Test\WordCout\testReadAnsi\obj\Debug\net7.0\ref\testReadAnsi.dll

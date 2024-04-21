@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Honor\\Desktop\\study C#\\заметки\\Test\\WordCout\\WordCout.csproj",
+      "projectUniqueName": "C:\\Users\\Honor\\Desktop\\study C#\\заметки\\Test\\WordCout\\test1\\WordCout.csproj",
       "projectName": "WordCout",
-      "projectPath": "C:\\Users\\Honor\\Desktop\\study C#\\заметки\\Test\\WordCout\\WordCout.csproj",
+      "projectPath": "C:\\Users\\Honor\\Desktop\\study C#\\заметки\\Test\\WordCout\\test1\\WordCout.csproj",
       "packagesPath": "C:\\Users\\Honor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Honor\\Desktop\\study C#\\заметки\\Test\\WordCout\\obj\\",
+      "outputPath": "C:\\Users\\Honor\\Desktop\\study C#\\заметки\\Test\\WordCout\\test1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Honor\\AppData\\Roaming\\NuGet\\NuGet.Config",
